@@ -1,0 +1,8 @@
+2019-09-03T11:56:18+00:00 CRITICAL Uncaught Error: Call to undefined function get_term_thumbnail() in /var/www/html/wp-content/themes/etalon/front-page.php:84
+Stack trace:
+#0 /var/www/html/wp-includes/template-loader.php(78): include()
+#1 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown в /var/www/html/wp-content/themes/etalon/front-page.php на строке 84
+
