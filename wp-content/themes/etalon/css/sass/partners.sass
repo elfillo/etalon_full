@@ -1,0 +1,31 @@
+@import "variables"
+
+.partners
+  width: 100%
+  margin-bottom: 64px
+  &_arrow
+    background-image: url("./../img/icons/play-arrow.svg") !important
+    &:focus
+      outline: none !important
+      border: none !important
+    &--left
+      transform: rotate(180deg)
+  &_button
+    width: 100%
+    display: flex
+    justify-content: center
+
+.partner
+  display: flex
+  justify-content: center
+  align-items: center
+  &__img
+    width: 240px
+    height: 130px
+    overflow: hidden
+    display: flex
+    align-items: center
+    justify-content: center
+    img
+      width: 100%
+      height: auto

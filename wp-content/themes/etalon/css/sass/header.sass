@@ -1,0 +1,278 @@
+@import "variables"
+
+.header
+  width: 1140px
+  margin: 34px auto 24px auto
+  @media screen and (max-width: 1140px)
+    width: 100%
+    padding: 0 10px
+    margin: 12px auto
+  &--top
+    width: 100%
+    margin-bottom: 18px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @media screen and (max-width: 620px)
+      justify-content: center
+      align-items: flex-start
+    .logo
+      width: 165px
+      height: 47px
+      overflow: hidden
+      img
+        width: 100%
+        height: auto
+      //z-index: 300
+    .search
+      width: 597px
+      height: 56px
+      display: flex
+      align-items: center
+      padding: 0 20px
+      border-radius: 4px
+      border: 1px solid #b6b6b6
+      font-size: 14px
+      font-weight: 400
+      position: relative
+      @media screen and (max-width: 1140px)
+        display: none
+      //&:after
+      //  content: ''
+      //  display: block
+      //  width: 17px
+      //  height: 17px
+      //  background: url("../img/icons/search.png")no-repeat center
+      //  position: absolute
+      //  right: 14px
+      //  top: calc(50% - 7px)
+      input
+        &::placeholder
+          color: $black
+    .contacts
+      display: flex
+      @media screen and (max-width: 1140px)
+        display: none
+      a
+        height: 56px
+        display: flex
+        align-items: center
+      a.mail
+        margin-right: 15px
+        .icon
+          margin-right: 15px
+      a.phone
+        .icon
+          margin-right: 5px
+  &--middle
+    width: 100%
+    justify-content: center
+    display: none
+    @media screen and (max-width: 1140px)
+      display: flex
+  &--bottom
+    width: 597px
+    margin-left: 190px
+    @media screen and (max-width: 1140px)
+      display: none
+
+.burger
+  display: none
+  width: 25px
+  height: 25px
+  flex-direction: column
+  justify-content: space-between
+  cursor: pointer
+  position: relative
+  z-index: 100
+  @media screen and (max-width: 1140px)
+    display: flex
+  @media screen and (max-width: 620px)
+    margin-left: 10px
+  span
+    width: 100%
+    height: 3px
+    background-color: $black
+
+.header_menu
+  width: 100%
+  &--list
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.header_mobile
+  &--catalog
+    display: none
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+    background-color: $white
+    z-index: 200
+    .group
+      width: 100%
+      display: flex
+      align-items: center
+      padding-right: 25px
+    .search
+      width: calc(100% - 60px)
+      margin: 15px 25px
+      height: 56px
+      display: flex
+      align-items: center
+      padding: 0 20px
+      border-radius: 4px
+      border: 1px solid #b6b6b6
+      font-size: 14px
+      font-weight: 400
+      position: relative
+      &:after
+        content: ''
+        display: block
+        width: 17px
+        height: 17px
+        background: url("../img/icons/search.png")no-repeat center
+        position: absolute
+        right: 14px
+        top: calc(50% - 7px)
+      input
+        &::placeholder
+          color: $black
+    &_close
+      display: flex
+      width: 25px
+      height: 25px
+      flex-direction: column
+      justify-content: space-between
+      cursor: pointer
+      position: relative
+      z-index: 110
+      span
+        width: 100%
+        height: 3px
+        background-color: $black
+        &:nth-child(1)
+          transform : rotate(45deg)
+          position: absolute
+          top: 50%
+        &:nth-child(2)
+          transform : rotate(-45deg)
+          position: absolute
+          top: 50%
+  &--main
+    display: none
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+    background-color: $white
+    z-index: 200
+
+
+.mobile_menu
+  &--catalog
+    width: 100%
+    height: 85vh
+    overflow: scroll
+    li
+      width: 100%
+      padding: 10px 10px 10px 50px
+      border-top: 1px solid #b6b6b6
+      min-height: 44px
+      display: flex
+      align-items: center
+      font-size: 14px
+  &--main
+    width: 100%
+    height: 85vh
+    overflow: scroll
+    margin-top: 80px
+    li
+      width: 100%
+      padding: 10px
+      min-height: 44px
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 14px
+
+//for ajax search
+.dgwt-wcas-sf-wrapp
+  input[type='search']
+    padding: 0 !important
+    //height: auto !important
+    border: none !important
+    &:active
+      border: none
+      outline: none
+    &:focus
+      box-shadow: none !important
+    &:hover
+      border: none
+      outline: none
+  svg
+    left: 98% !important
+
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 10000
+  width: 100vw
+  height: 100vh
+  //display: flex
+  justify-content: center
+  align-items: center
+  background-color: rgba(0,0,0, 0.8)
+  display: none
+  &_form
+    width: 300px
+    padding: 15px
+    position: relative
+    background-color: $white
+    border-radius: 4px
+    .close
+      display: flex
+      width: 15px
+      height: 15px
+      flex-direction: column
+      justify-content: space-between
+      cursor: pointer
+      position: absolute
+      top: 15px
+      right: 15px
+      z-index: 110
+      span
+        width: 100%
+        height: 1px
+        background-color: $black
+        &:nth-child(1)
+          transform : rotate(45deg)
+          position: absolute
+          top: 50%
+        &:nth-child(2)
+          transform : rotate(-45deg)
+          position: absolute
+          top: 50%
+    .title
+      width: 100%
+      font-size: 14px
+      font-weight: 700
+      margin-bottom: 15px
+    input[type='text'], input[type='tel']
+      width: 100%
+      height: 40px
+      padding: 0 10px
+      margin-bottom: 15px
+      border: 1px solid grey
+      border-radius: 4px
+    input[type='submit']
+      margin-left: auto
+    .description
+      font-size: 10px
+      margin-bottom: 15px
+

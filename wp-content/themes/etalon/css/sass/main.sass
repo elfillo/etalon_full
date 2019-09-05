@@ -1,0 +1,59 @@
+@import "variables"
+@import "header"
+@import "sidebar"
+@import "menu"
+@import "footer"
+@import "banner"
+@import "partners"
+@import "buttons"
+@import "shop"
+@import "help-promo"
+@import "slider"
+
+@font-face
+  font-family: 'Century Gothic'
+  src: url("../fonts/11528.ttf") format('truetype')
+  font-weight: normal
+  font-style: normal
+
+body, html
+  font-family: Century Gothic !important
+
+.container
+  //width: 1280px
+  width: 1200px
+  height: inherit
+  margin: 0 auto
+  @media screen and (max-width: 1280px)
+    width: 100%
+    padding: 0 10px
+  .sidebar
+    width: 220px
+  .content
+    width: 960px
+.flex
+  display: flex
+  &_sb
+    justify-content: space-between
+.active
+  color: $red
+
+.thank
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  span
+    display: block
+    font-weight: 700
+    margin-bottom: 15px
+  p
+    display: block
+    margin-bottom: 15px
+  .button
+    width: 100%
+    display: flex
+    justify-content: center
+    margin-bottom: 15px
+

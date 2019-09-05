@@ -1,0 +1,22 @@
+@import "variables"
+
+.sale-slider
+  width: 100%
+  margin-bottom: 20px !important
+  .swiper-slide
+    img
+      width: 100%
+      height: auto
+  .swiper-pagination
+    .swiper-pagination-bullet
+      width: 10px !important
+      height: 10px !important
+      border: 1px solid $white
+      background: none !important
+      opacity: 1 !important
+      &:focus
+        outline: none !important
+    .swiper-pagination-bullet-active
+      background: url("../img/icons/circle.svg") no-repeat !important
+      background-position: center !important
+      background-size: 4px !important
