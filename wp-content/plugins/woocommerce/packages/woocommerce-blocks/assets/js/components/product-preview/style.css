@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$gap-small".
-        on line 14 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-preview/style.scss
+        on line 14 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-preview/style.scss
 
 9: 		margin-bottom: 0;
 10: 	}
@@ -15,7 +15,7 @@ Error: Undefined variable: "$gap-small".
 19: 		.wc-product-preview__title {
 
 Backtrace:
-/Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-preview/style.scss:14
+/Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-preview/style.scss:14
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -77,4 +77,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gap-small\".\A         on line 14 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-preview/style.scss\A \A 9: 		margin-bottom: 0;\A 10: 	}\A 11: \A 12: 	.wc-product-preview__add-to-cart {\A 13: 		cursor: text;\A 14: 		margin: $gap-small 0 0;\A 15: 	}\A 16: \A 17: \A 18: 	.is-hidden-title & {\A 19: 		.wc-product-preview__title {"; }
+  content: "Error: Undefined variable: \"$gap-small\".\A         on line 14 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-preview/style.scss\A \A 9: 		margin-bottom: 0;\A 10: 	}\A 11: \A 12: 	.wc-product-preview__add-to-cart {\A 13: 		cursor: text;\A 14: 		margin: $gap-small 0 0;\A 15: 	}\A 16: \A 17: \A 18: 	.is-hidden-title & {\A 19: 		.wc-product-preview__title {"; }

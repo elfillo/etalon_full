@@ -1,7 +1,7 @@
 /*
 Error: Undefined mixin 'hover-state'.
-        on line 16 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss, in `hover-state'
-        from line 16 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss
+        on line 16 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss, in `hover-state'
+        from line 16 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss
 
 11: 			content: ":";
 12: 		}
@@ -16,8 +16,8 @@ Error: Undefined mixin 'hover-state'.
 21: 	&.is-loading {
 
 Backtrace:
-/Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss:16:in `hover-state'
-/Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss:16
+/Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss:16:in `hover-state'
+/Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss:16
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -77,4 +77,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'hover-state'.\A         on line 16 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss, in `hover-state'\A         from line 16 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss\A \A 11: 			content: \":\";\A 12: 		}\A 13: 	}\A 14: \A 15: 	&.is-not-active {\A 16: 		@include hover-state {\A 17: 			background: $white;\A 18: 		}\A 19: 	}\A 20: \A 21: 	&.is-loading {"; }
+  content: "Error: Undefined mixin 'hover-state'.\A         on line 16 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss, in `hover-state'\A         from line 16 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-control/style.scss\A \A 11: 			content: \":\";\A 12: 		}\A 13: 	}\A 14: \A 15: 	&.is-not-active {\A 16: 		@include hover-state {\A 17: 			background: $white;\A 18: 		}\A 19: 	}\A 20: \A 21: 	&.is-loading {"; }

@@ -1,7 +1,7 @@
 /*
 Error: Undefined mixin 'visually-hidden'.
-        on line 3 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss, in `visually-hidden'
-        from line 3 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss
+        on line 3 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss, in `visually-hidden'
+        from line 3 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss
 
 1: .woocommerce-product-categories__operator {
 2: 	.components-base-control__help {
@@ -13,8 +13,8 @@ Error: Undefined mixin 'visually-hidden'.
 8: 	.woocommerce-product-categories__operator.components-base-control {
 
 Backtrace:
-/Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss:3:in `visually-hidden'
-/Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss:3
+/Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss:3:in `visually-hidden'
+/Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss:3
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -74,4 +74,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'visually-hidden'.\A         on line 3 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss, in `visually-hidden'\A         from line 3 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss\A \A 1: .woocommerce-product-categories__operator {\A 2: 	.components-base-control__help {\A 3: 		@include visually-hidden;\A 4: 	}\A 5: }\A 6: \A 7: .components-panel {\A 8: 	.woocommerce-product-categories__operator.components-base-control {"; }
+  content: "Error: Undefined mixin 'visually-hidden'.\A         on line 3 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss, in `visually-hidden'\A         from line 3 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/components/product-category-control/style.scss\A \A 1: .woocommerce-product-categories__operator {\A 2: 	.components-base-control__help {\A 3: 		@include visually-hidden;\A 4: 	}\A 5: }\A 6: \A 7: .components-panel {\A 8: 	.woocommerce-product-categories__operator.components-base-control {"; }

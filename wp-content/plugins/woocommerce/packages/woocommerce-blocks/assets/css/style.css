@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$gap-large".
-        on line 6 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/css/style.scss
+        on line 6 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/css/style.scss
 
 1: .wc-block-grid__products {
 2: 	display: flex;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$gap-large".
 11: 	margin: 0 0 $gap-large 0;
 
 Backtrace:
-/Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/css/style.scss:6
+/Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/css/style.scss:6
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -66,4 +66,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gap-large\".\A         on line 6 of /Users/admin/Projects/WpProjects/etalon_prod/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/css/style.scss\A \A 1: .wc-block-grid__products {\A 2: 	display: flex;\A 3: 	flex-wrap: wrap;\A 4: 	list-style: none;\A 5: 	padding: 0;\A 6: 	margin: 0 0 $gap-large;\A 7: }\A 8: \A 9: .wc-block-grid__product {\A 10: 	padding: 0 $gap 0 0;\A 11: 	margin: 0 0 $gap-large 0;"; }
+  content: "Error: Undefined variable: \"$gap-large\".\A         on line 6 of /Users/admin/Projects/WpProjects/etalon_full/www/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/css/style.scss\A \A 1: .wc-block-grid__products {\A 2: 	display: flex;\A 3: 	flex-wrap: wrap;\A 4: 	list-style: none;\A 5: 	padding: 0;\A 6: 	margin: 0 0 $gap-large;\A 7: }\A 8: \A 9: .wc-block-grid__product {\A 10: 	padding: 0 $gap 0 0;\A 11: 	margin: 0 0 $gap-large 0;"; }
