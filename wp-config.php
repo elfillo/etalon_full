@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'etalon');
 
 /** MySQL database username */
-define( 'DB_USER', 'root');
+define( 'DB_USER', 'etalon_admin');
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'p4ssw0rd!');
+define( 'DB_PASSWORD', '}P%BAwQ6K$PR');
 
 /** MySQL hostname */
 define( 'DB_HOST', 'db:3306');
