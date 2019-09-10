@@ -633,6 +633,8 @@
   .btn--big {
     width: 310px;
     font-size: 13px; }
+  .btn--full {
+    width: 100%; }
 
 .shop {
   width: 100%; }
@@ -1044,6 +1046,101 @@
   margin: 0 auto;
   margin-bottom: 150px;
   width: 870px; }
+.sale--center_parking--banner {
+  width: 100%; }
+  .sale--center_parking--banner .container {
+    height: 380px;
+    background-image: url("../img/banners/sale_parking_bg.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    margin-bottom: 100px; }
+  .sale--center_parking--banner .title {
+    width: 480px;
+    font-size: 48px;
+    font-weight: 700;
+    padding-left: 35px; }
+  .sale--center_parking--banner .form {
+    width: 323px;
+    height: 466px;
+    padding: 25px 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 8px 53px 2px rgba(2, 3, 2, 0.24);
+            box-shadow: 0 8px 53px 2px rgba(2, 3, 2, 0.24);
+    position: absolute;
+    top: -43px;
+    right: -10px; }
+    .sale--center_parking--banner .form .title {
+      width: 80%;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 24px;
+      padding: 0;
+      margin-bottom: 10px; }
+    .sale--center_parking--banner .form .content {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px; }
+      .sale--center_parking--banner .form .content span {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 24px; }
+      .sale--center_parking--banner .form .content p {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 24px; }
+.sale--center_visit {
+  margin-bottom: 67px; }
+  .sale--center_visit .title {
+    width: 520px;
+    margin: 0 auto;
+    margin-bottom: 65px; }
+  .sale--center_visit .sale--column {
+    margin: 0 auto 65px; }
+  .sale--center_visit--banner {
+    width: 100%; }
+    .sale--center_visit--banner .container {
+      height: 304px;
+      background-image: url("../img/banners/sale_visit_bg.png");
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 100px; }
+    .sale--center_visit--banner .title {
+      width: 413px;
+      font-size: 40px;
+      line-height: 40px;
+      font-weight: 700;
+      color: #fff;
+      padding: 20px 0;
+      padding-left: 35px; }
+    .sale--center_visit--banner .button {
+      width: 280px;
+      margin-left: 35px; }
+.sale--center_news {
+  width: 970px;
+  margin: 0 auto;
+  margin-bottom: 67px; }
+  .sale--center_news .title {
+    font-weight: 700; }
+  .sale--center_news .news_list {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .sale--center_news .news_list .sidebar_news--item {
+      width: 224px; }
 .sale--title {
   font-size: 24px;
   font-weight: 700;
@@ -1071,8 +1168,13 @@
 
 @font-face {
   font-family: "Century Gothic";
-  src: url("../fonts/11528.ttf") format("truetype");
+  src: url("../fonts/CenturyGothic_regular.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Century Gothic";
+  src: url("../fonts/CenturyGothic_bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal; }
 body, html {
   font-family: Century Gothic !important; }

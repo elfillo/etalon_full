@@ -23,13 +23,13 @@
 define( 'DB_NAME', 'etalon');
 
 /** MySQL database username */
-define( 'DB_USER', 'etalon_admin');
+define( 'DB_USER', 'root');
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '}P%BAwQ6K$PR');
+define( 'DB_PASSWORD', 'p4ssw0rd!');
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost');
+define( 'DB_HOST', 'db:3306');
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8');

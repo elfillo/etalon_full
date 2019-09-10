@@ -137,5 +137,89 @@
             </div>
         </div>
     </section>
+    <section class="sale--center_parking--banner">
+        <div class="container">
+            <div class="title">Выбирайте мебель.
+                Об остальном мы
+                позаботились.
+            </div>
+            <div class="form">
+                <div class="title">Бесплатная 2-х
+                    часовая парковка
+                </div>
+                <div class="content">
+                    <p>МЦ «Эталон» заботится не только о том, чтобы Вы смогли найти нужную Вам мебель, но и о том, чтобы, зайдя в мебельный центр, Вы не беспокоились о сохранности своего автомобиля.</p>
 
+                    Поэтому к Вашим услугам имеется закрытая автоматизированная парковка, оборудованная системой видеонаблюдения. Для удобного и неспешного выбора мебели мы сделали парковку бесплатной на 2 часа.
+
+                    <span>Также мы сдаем машиноместа в аренду. Ознакомьтесь с этой услугой
+                    ниже</span>
+                </div>
+                <div class="button">
+                    <div class="btn btn--full btn--dark">Хочу арендовать парковку!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sale--center_visit">
+        <div class="container">
+            <div class="title sale--title sale--title_big sale--title_center">
+                Гостевой визит:
+                “Оптимизируем поиск,
+                экономим время.”
+            </div>
+            <div class="sale--column">
+                <div class="sale--p">Чтобы соответствовать требованиям времени, мебельный центр «Эталон» делает всё, чтобы сократить сроки поиска нужной Вам мебели. Теперь, чтобы подобрать в МЦ «Эталон» подходящие Вам варианты, достаточно сделать лишь ТРИ ШАГА:</div>
+            </div>
+            <div class="visit_steps flex">
+                <div class="sale--column">
+                    <div class="image">
+                        <img src="<?php echo get_template_directory_uri() ?>/img/icons/visit_steps/visit_step_1.png" alt="#">
+                    </div>
+                    <div class="title">ШАГ 1</div>
+                    <div class="sale--p">Вы описываете свою мечту на сайте МЦ «Эталон» и назначаете удобное для Вас время посещения Центра</div>
+                </div>
+                <div class="sale--column">
+                    <div class="image">
+                        <img src="<?php echo get_template_directory_uri() ?>/img/icons/visit_steps/visit_step_2.png" alt="#">
+                    </div>
+                    <div class="title">ШАГ 2</div>
+                    <div class="sale--p">Мы подбираем все возможные варианты. Не стесняйтесь говорить о том, что вам нравится!</div>
+                </div>
+                <div class="sale--column">
+                    <div class="image">
+                        <img src="<?php echo get_template_directory_uri() ?>/img/icons/visit_steps/visit_step_3.png" alt="#">
+                    </div>
+                    <div class="title">ШАГ 3</div>
+                    <div class="sale--p">В сопровождении персонального консультанта Вы смотрите только то, что соответствует Вашему запросу.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sale--center_visit--banner">
+        <div class="container">
+            <div class="title">Закажите
+                «гостевой визит»
+                в МЦ «Эталон»
+                здесь и сейчас!</div>
+            <div class="button">
+                <div class="btn btn--full btn--dark">Заказать гостевой визит</div>
+            </div>
+        </div>
+    </section>
+    <section class="sale--center_news">
+        <div class="sidebar_news">
+            <div class="title">Новости</div>
+            <div class="news_list">
+            <?php if (have_posts()): query_posts('category_name=news'); while (have_posts()): the_post(); ?>
+                <div class="sidebar_news--item">
+                    <div class="cover">
+                        <?php the_post_thumbnail()?>
+                    </div>
+                    <div class="title"><?php the_title()?></div>
+                </div>
+            <?php endwhile; endif; ?>
+            </div>
+        </div>
+    </section>
 <?php get_footer()?>
