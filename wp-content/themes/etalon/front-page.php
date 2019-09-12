@@ -28,14 +28,12 @@
                 <div class="swiper-pagination"></div>
             </div>
             <?php
-                $orderby = 'name';
-                $order = 'asc';
-                $hide_empty = false ;
                 $cat_args = array(
-                    'orderby'    => $orderby,
-                    'order'      => $order,
-                    'hide_empty' => $hide_empty,
-                    'with_thumbnail' => true
+                    'orderby'    => 'name',
+                    'order'      => 'asc',
+                    'hide_empty' => false,
+                    'with_thumbnail' => true,
+                    'parent' => 0
                 );
                 $product_categories = get_terms( 'product_cat', $cat_args );
             ?>
