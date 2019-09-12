@@ -149,11 +149,10 @@ function woocommerce_content() {
 
             <?php do_action( 'woocommerce_after_shop_loop' ); ?>
 
-        <?php
+            <?php
         else :
             do_action( 'woocommerce_no_products_found' );
-        endif;?>
-        </div>
-        <?
+        endif;
+        echo '</div>';
     }
 }
