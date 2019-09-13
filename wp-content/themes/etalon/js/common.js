@@ -106,3 +106,18 @@ $(document).ready(function () {
        $('.map_container').css('background-image', 'url('+imgUrl+')');
    }
 });
+//show sub menu
+$(document).ready(function () {
+    $('.header_menu--list li')
+        .mouseenter(function () {
+        $(this).addClass('show_sub');
+        })
+        .mouseleave(function () {
+            let self = this;
+            setTimeout(function () {
+                $(self).removeClass('show_sub');
+            }, 500);
+
+        })
+    ;
+});

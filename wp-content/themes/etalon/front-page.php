@@ -42,7 +42,7 @@
                 <?php $img = wp_get_attachment_url(get_term_meta($category->term_id, 'thumbnail_id', true )); ?>
                 <div class="shop_list--item">
                     <a href="<?php echo get_term_link($category)?>" >
-                        <div class="image" style="background-color: #00a0d2">
+                        <div class="image" <?php if(!$img){echo 'style="background-color: #eee"';} ?>>
                             <img src="<?php echo $img?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" />
                         </div>
                     </a>

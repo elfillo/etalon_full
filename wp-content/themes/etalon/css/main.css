@@ -138,6 +138,39 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
+    .header_menu--list li {
+      position: relative; }
+    .header_menu--list .sub-menu {
+      display: none;
+      width: 220px;
+      border: 1px solid #d1d1d1;
+      position: absolute;
+      background-color: white;
+      z-index: 100;
+      left: calc(50% - 110px);
+      top: 25px; }
+      .header_menu--list .sub-menu:hover {
+        display: block; }
+      .header_menu--list .sub-menu li {
+        width: 100%;
+        min-height: 43px;
+        padding-left: 40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        font-size: 14px;
+        border-bottom: 1px solid #d1d1d1;
+        cursor: pointer; }
+        .header_menu--list .sub-menu li:last-child {
+          border-bottom: none; }
+        .header_menu--list .sub-menu li:hover {
+          background-color: #d22839;
+          color: #fff; }
+    .header_menu--list li.show_sub .sub-menu {
+      display: block; }
 
 .header_mobile--catalog {
   display: none;
@@ -370,9 +403,13 @@
               align-items: center;
       font-size: 14px;
       border-bottom: 1px solid #d1d1d1;
-      position: relative; }
+      position: relative;
+      cursor: pointer; }
       .sidebar_menu--list li:last-child {
         border-bottom: none; }
+      .sidebar_menu--list li:hover {
+        background-color: #d22839;
+        color: #fff; }
 .sidebar_news {
   width: 100%; }
   .sidebar_news .title {
@@ -740,6 +777,20 @@
   font-size: 16px;
   text-align: center; }
 .category_list .shop_list--item .text .buy {
+  position: unset;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.shop_list--item_parent .text .name {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center; }
+.shop_list--item_parent .text .buy {
   position: unset;
   width: 100%;
   display: -webkit-box;

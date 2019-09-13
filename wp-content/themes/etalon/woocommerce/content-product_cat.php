@@ -19,38 +19,48 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<li <?php wc_product_cat_class( 'shop_list--item', $category ); ?>>
-	<?php
+<li class="shop_list--item shop_list--item_parent" <?php //wc_product_cat_class( 'shop_list--item', $category ); ?>>
+    <?php $img = wp_get_attachment_url(get_term_meta($category->term_id, 'thumbnail_id', true )); ?>
+    <a href="<?php echo get_term_link($category)?>" >
+        <div class="image" style="background-color: #eee">
+            <img src="<?php echo $img?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" />
+        </div>
+    </a>
+    <div class="text">
+        <a href="<?php echo get_term_link($category)?>" class="name"><?php echo $category->name?></a>
+        <a href="<?php echo get_term_link($category)?>" class="buy"><div class="btn">Подробнее</div></a>
+    </div>
+    <?
 	/**
 	 * woocommerce_before_subcategory hook.
 	 *
 	 * @hooked woocommerce_template_loop_category_link_open - 10
 	 */
-	do_action( 'woocommerce_before_subcategory', $category );
+	//do_action( 'woocommerce_before_subcategory', $category );
 
 	/**
 	 * woocommerce_before_subcategory_title hook.
 	 *
 	 * @hooked woocommerce_subcategory_thumbnail - 10
 	 */
-	do_action( 'woocommerce_before_subcategory_title', $category );
+	//do_action( 'woocommerce_before_subcategory_title', $category );
 
 	/**
 	 * woocommerce_shop_loop_subcategory_title hook.
 	 *
 	 * @hooked woocommerce_template_loop_category_title - 10
 	 */
-	do_action( 'woocommerce_shop_loop_subcategory_title', $category );
+	//do_action( 'woocommerce_shop_loop_subcategory_title', $category );
 
 	/**
 	 * woocommerce_after_subcategory_title hook.
 	 */
-	do_action( 'woocommerce_after_subcategory_title', $category );
+	//do_action( 'woocommerce_after_subcategory_title', $category );
 
 	/**
 	 * woocommerce_after_subcategory hook.
 	 *
 	 * @hooked woocommerce_template_loop_category_link_close - 10
 	 */
-	do_action( 'woocommerce_after_subcategory', $category ); ?>
+	//do_action( 'woocommerce_after_subcategory', $category ); ?>
 </li>
