@@ -121,3 +121,8 @@ $(document).ready(function () {
         })
     ;
 });
+//show arrow (on main menu)
+$(document).ready(function () {
+    let sub = $('.sub-menu');
+    sub.parent().addClass('show_arrow');
+});
