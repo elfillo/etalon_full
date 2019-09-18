@@ -989,6 +989,20 @@ body:not(.dgwt-wcas-is-details) .dgwt-wcas-suggestion:last-child {
     overflow-y: auto;
     border: none;
 }
+
+.dgwt-wcas-overlay-mobile-on .dgwt-wcas-enable-mobile-form {
+    display: none;
+}
+.dgwt-wcas-enable-mobile-form {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
 .dgwt-wcas-overlay-mobile-on.dgwt-wcas-is-ios .dgwt-wcas-suggestions-wrapp {
     height: calc(100% - 45px) !important;
 }
@@ -1003,7 +1017,7 @@ body:not(.dgwt-wcas-is-details) .dgwt-wcas-suggestion:last-child {
     height: auto !important;
 }
 
-.dgwt-wcas-overlay-mobile-on.dgwt-wcas-is-ios > *:not(.dgwt-wcas-overlay-mobile) {
+.dgwt-wcas-overlay-mobile-on.dgwt-wcas-is-ios:not(.dgwt-wcas-theme-flatsome) > *:not(.dgwt-wcas-overlay-mobile) {
     display: none;
 }
 

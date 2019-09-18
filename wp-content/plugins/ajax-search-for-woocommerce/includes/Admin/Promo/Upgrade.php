@@ -45,6 +45,7 @@ class Upgrade
      */
     public function renderUpgradeModal()
     {
+        $utmLink = 'https://ajaxsearch.pro/?utm_source=wp-admin&utm_medium=referral&utm_campaign=upgrade-popup&utm_content=features&utm_gen=utmdc#features-comparsion';
 
         $features = array(
             __('Speed up search! (even 10x faster) - users love it!', 'ajax-search-for-woocommerce'),
@@ -52,8 +53,7 @@ class Upgrade
             __('Fuzzy search', 'ajax-search-for-woocommerce'),
             __('Search in attributes and variation products SKUs (option)', 'ajax-search-for-woocommerce'),
             __('Individual customization of the search form (simple CSS improvements)', 'ajax-search-for-woocommerce'),
-            __('Individual tips and support by Damian Góra - the author of the plugin', 'ajax-search-for-woocommerce'),
-            __('and more...', 'ajax-search-for-woocommerce'),
+            __('Individual tips and support by Damian Góra - the author of the plugin', 'ajax-search-for-woocommerce')
         );
         echo '<a style="display:none;" class="thickbox js-dgwt-wcas-modal-pro-handler" href="#TB_inline?width=600&height=380&inlineId=dgwt-wcas-modal" title="' . __('Ajax Search for WooCommerce PRO - Upgrade Now', 'ajax-search-for-woocommerce') . '"></a>';
         echo '<div id="dgwt-wcas-modal" class="dgwt-wcas-modal-upgrade" style="display:none;">';
@@ -64,6 +64,7 @@ class Upgrade
         foreach ($features as $feature) {
             echo '<li><strong>+ ' . $feature . '</strong></li>';
         }
+        echo '<li><strong>+ '. __('and more...', 'ajax-search-for-woocommerce') .' <a target="_blank" href="' . $utmLink . '">' . __('See a comparison of all free and premium features!', 'ajax-search-for-woocommerce') . '</a></strong></li>';
         echo '</ul>';
         echo '<p>' . __('You can upgrade without leaving the admin panel by clicking below.', 'ajax-search-for-woocommerce');
         echo '<br />' . __('Free updates and email support included.', 'ajax-search-for-woocommerce') . '</p>';

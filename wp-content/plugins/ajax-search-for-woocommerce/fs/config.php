@@ -32,3 +32,6 @@ function dgoraAsfwFs()
 dgoraAsfwFs();
 // Signal that SDK was initiated.
 do_action( 'dgoraAsfwFs_loaded' );
+dgoraAsfwFs()->add_filter( 'plugin_icon', function () {
+    return dirname( dirname( __FILE__ ) ) . '/assets/img/logo-128.png';
+} );

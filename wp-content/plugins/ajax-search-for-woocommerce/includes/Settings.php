@@ -81,31 +81,31 @@ class Settings {
 	public function settings_sections() {
 
 		$sections = array(
-			array(
+			5 => array(
 				'id'    => 'dgwt_wcas_basic',
 				'title' => __( 'Basic', 'ajax-search-for-woocommerce' )
 			),
-			array(
+			10 => array(
 				'id'    => 'dgwt_wcas_form_body',
 				'title' => __( 'Form', 'ajax-search-for-woocommerce' )
 			),
-			array(
+			15 => array(
 				'id'    => 'dgwt_wcas_colors',
 				'title' => __( 'Colors', 'ajax-search-for-woocommerce' )
 			),
-			array(
+			20 => array(
 				'id'    => 'dgwt_wcas_scope',
 				'title' => __( 'Scope', 'ajax-search-for-woocommerce' )
 			)
 		);
 
 		if(dgoraAsfwFs()->is_premium()){
-            $sections[] = array(
+            $sections[25] = array(
                 'id'    => 'dgwt_wcas_performance',
                 'title' => __( 'Pro', 'ajax-search-for-woocommerce' )
             );
         }else{
-            $sections[] = array(
+            $sections[25] = array(
                 'id'    => 'dgwt_wcas_performance',
                 'title' => Helpers::getSettingsProLabel(
                     __( 'Increase sales', 'ajax-search-for-woocommerce' ),
@@ -119,6 +119,8 @@ class Settings {
 
 		$sections = apply_filters( 'dgwt_wcas_settings_sections', $sections ); // deprecated since v1.2.0
         $sections = apply_filters( 'dgwt/wcas/settings/sections', $sections );
+
+        ksort($sections);
 
 		return $sections;
 	}
@@ -228,18 +230,6 @@ class Settings {
 				array(
 					'name'    => 'show_product_sku',
 					'label'   => __( 'Show SKU', 'ajax-search-for-woocommerce' ),
-					'type'    => 'checkbox',
-					'default' => 'off',
-				),
-				array(
-					'name'    => 'show_matching_categories',
-					'label'   => __( 'Also show matching categories', 'ajax-search-for-woocommerce' ),
-					'type'    => 'checkbox',
-					'default' => 'on',
-				),
-				array(
-					'name'    => 'show_matching_tags',
-					'label'   => __( 'Also show matching tags', 'ajax-search-for-woocommerce' ),
 					'type'    => 'checkbox',
 					'default' => 'off',
 				),
@@ -416,51 +406,79 @@ class Settings {
 				)
 			) ),
 			'dgwt_wcas_scope'    => apply_filters( 'dgwt/wcas/settings/section=scope', array(
-				array(
-					'name'  => 'search_scope_head',
-					'label' => __( 'Search scope', 'ajax-search-for-woocommerce' ),
-					'type'  => 'head',
-					'class' => 'dgwt-wcas-sgs-header'
-				),
-                array(
+                5  => array(
+                    'name'  => 'search_scope_head',
+                    'label' => __('Products search scope', 'ajax-search-for-woocommerce'),
+                    'type'  => 'head',
+                    'class' => 'dgwt-wcas-sgs-header'
+                ),
+                10 => array(
                     'name'  => 'search_scope_desc',
-                    'label' => __( 'Info', 'ajax-search-for-woocommerce' ),
+                    'label' => __('Info', 'ajax-search-for-woocommerce'),
                     'type'  => 'desc',
-                    'desc'  => __( 'Searching in products names is always enabled. You can extend or narrow the searching scope using the following options.', 'ajax-search-for-woocommerce' ),
+                    'desc'  => __('Searching in products names is always enabled. You can extend or narrow the searching scope using the following options.',
+                        'ajax-search-for-woocommerce'),
                     'class' => 'wcas-opt-search-scope'
                 ),
-                array(
-					'name'    => 'search_in_product_content',
-					'label'   => __( 'Search in description', 'ajax-search-for-woocommerce' ),
-					'type'    => 'checkbox',
-					'default' => 'off',
-				),
-				array(
-					'name'    => 'search_in_product_excerpt',
-					'label'   => __( 'Search in short description', 'ajax-search-for-woocommerce' ),
-					'type'    => 'checkbox',
-					'default' => 'off',
-				),
-				array(
-					'name'    => 'search_in_product_sku',
-					'label'   => __( 'Search in SKU', 'ajax-search-for-woocommerce' ),
-					'type'    => 'checkbox',
-					'desc' => dgoraAsfwFs()->is_premium() ? __('Searching also in variable products SKU','ajax-search-for-woocommerce') : sprintf(__('Searching in variable products SKU is available only in <a href="%s">the pro version</a>.','ajax-search-for-woocommerce'), Upgrade::getUpgradeUrl()),
-					'default' => 'off',
-				),
-                array(
+                15 => array(
+                    'name'    => 'search_in_product_content',
+                    'label'   => __('Search in description', 'ajax-search-for-woocommerce'),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
+                ),
+                20 => array(
+                    'name'    => 'search_in_product_excerpt',
+                    'label'   => __('Search in short description', 'ajax-search-for-woocommerce'),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
+                ),
+                25 => array(
+                    'name'    => 'search_in_product_sku',
+                    'label'   => __('Search in SKU', 'ajax-search-for-woocommerce'),
+                    'type'    => 'checkbox',
+                    'desc'    => dgoraAsfwFs()->is_premium() ? __('Searching also in variable products SKU',
+                        'ajax-search-for-woocommerce') : sprintf(__('Searching in variable products SKU is available only in <a href="%s">the pro version</a>.',
+                        'ajax-search-for-woocommerce'), Upgrade::getUpgradeUrl()),
+                    'default' => 'off',
+                ),
+                30 => array(
                     'name'    => 'search_in_product_attributes',
-                    'label'   => __( 'Search in attributes', 'ajax-search-for-woocommerce' ),
+                    'label'   => __('Search in attributes', 'ajax-search-for-woocommerce'),
                     'class'   => 'dgwt-wcas-premium-only',
                     'type'    => 'checkbox',
                     'default' => 'off',
                 ),
-				array(
-					'name'    => 'exclude_out_of_stock',
-					'label'   => __( "Exclude 'out of stock' products", 'ajax-search-for-woocommerce' ),
-					'type'    => 'checkbox',
-					'default' => 'off',
-				),
+                33 => array(
+                    'name'    => 'search_in_custom_fields',
+                    'label'   => __('Search in custom fields', 'ajax-search-for-woocommerce'),
+                    'class'   => 'dgwt-wcas-premium-only',
+                    'type'    => 'text',
+                    'default' => '',
+                ),
+                35 => array(
+                    'name'    => 'exclude_out_of_stock',
+                    'label'   => __("Exclude 'out of stock' products", 'ajax-search-for-woocommerce'),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
+                ),
+                40 => array(
+                    'name'  => 'search_scope_extra_suggestions_head',
+                    'label' => __('Show in suggestions also', 'ajax-search-for-woocommerce'),
+                    'type'  => 'head',
+                    'class' => 'dgwt-wcas-sgs-header'
+                ),
+                45 => array(
+                    'name'    => 'show_matching_categories',
+                    'label'   => __('Matching product categories', 'ajax-search-for-woocommerce'),
+                    'type'    => 'checkbox',
+                    'default' => 'on',
+                ),
+                50 => array(
+                    'name'    => 'show_matching_tags',
+                    'label'   => __('Matching product tags', 'ajax-search-for-woocommerce'),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
+                ),
 			) ),
             'dgwt_wcas_performance'    => apply_filters( 'dgwt/wcas/settings/section=performance', array(
                 0 => array(
@@ -487,6 +505,14 @@ class Settings {
 		$fuzzines_text = __('<strong>Increases sales conversions.</strong> Returns sugestions based on likely relevance even though a search keyword may not exactly match. E.g if you type "ipho<b>m</b>e" you get the same results as for "iphone"', 'ajax-search-for-woocommerce');
 
 		if(dgoraAsfwFs()->is_premium()){
+
+            $settings_fields['dgwt_wcas_scope'][33] = array(
+                'name'  => 'search_in_custom_fields',
+                'label' => __( 'Search in custom fields', 'ajax-search-for-woocommerce' ),
+                'type'  => 'selectize',
+                'options' => Helpers::getSearchableCustomFields(),
+                'desc'  => __( 'Select the custom fields you want to add to the search scope', 'ajax-search-for-woocommerce' ),
+            );
 
             $settings_fields['dgwt_wcas_performance'][0] = array(
                 'name'  => 'pro_features',
@@ -564,7 +590,9 @@ class Settings {
             );
         }
 
-        ksort($settings_fields['dgwt_wcas_performance']);
+        foreach ($settings_fields as $key => $sections) {
+            ksort($settings_fields[$key]);
+        }
 
         if (!dgoraAsfwFs()->is_premium()) {
 
@@ -580,7 +608,7 @@ class Settings {
             }
         }
 
-		return $settings_fields;
+		return apply_filters( 'dgwt/wcas/settings', $settings_fields);
 	}
 
 	/*

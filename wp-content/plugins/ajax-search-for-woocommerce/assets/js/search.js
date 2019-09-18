@@ -37,6 +37,7 @@
                     div.className = containerClass;
                     div.style.position = 'absolute';
                     div.style.display = 'none';
+                    div.setAttribute('unselectable','on');
                     return div;
                 },
                 highlight: function (suggestionValue, phrase) {
@@ -62,9 +63,41 @@
                     }
 
                     return suggestionValue;
-                }
+                },
+                debounce: function (func, wait) {
+                    var timeout,
+                        debounceID = new Date().getUTCMilliseconds();
+
+                    // First query in the chain
+                    if(ajaxDebounceState.id.length === 0){
+                        ajaxDebounceState.id = debounceID;
+                        func();
+                        return;
+                    }
+
+                    ajaxDebounceState.id = debounceID;
+
+                    timeout = setTimeout(function(){
+
+                        if(debounceID !== ajaxDebounceState.id){
+                            clearTimeout(timeout);
+                            return;
+                        }
+
+                        // Last query in the chain
+                        func();
+                        ajaxDebounceState.id = '';
+
+                    }, wait);
+                },
             };
         }() ),
+        ajaxDebounceState = {
+            id: '',
+            callback: null,
+            ajaxSettings: null,
+            object: null,
+        },
         keys = {
             ESC: 27,
             TAB: 9,
@@ -73,71 +106,11 @@
             UP: 38,
             RIGHT: 39,
             DOWN: 40
-        };
+        },
+        noop = $.noop;
 
     function Autocomplete(el, options) {
-        var noop = $.noop,
-            that = this,
-            defaults = {
-                ajaxSettings: {},
-                autoSelectFirst: false,
-                appendTo: document.body,
-                serviceUrl: null,
-                lookup: null,
-                onSelect: null,
-                onMouseOver: null,
-                onMouseLeave: null,
-                width: 'auto',
-                containerDetailsWidth: 'auto',
-                showDetailsPanel: false,
-                showImage: false,
-                showPrice: false,
-                showSKU: false,
-                showDescription: false,
-                showSaleBadge: false,
-                showFeaturedBadge: false,
-                saleBadgeText: 'sale',
-                featuredBadgeText: 'featured',
-                minChars: 3,
-                maxHeight: 600,
-                deferRequestBy: 0,
-                params: {},
-                formatResult: Autocomplete.formatResult,
-                delimiter: null,
-                zIndex: 999999999,
-                type: 'GET',
-                noCache: false,
-                isRtl: false,
-                onSearchStart: noop,
-                onSearchComplete: noop,
-                onSearchError: noop,
-                preserveInput: false,
-                searchFormClass: 'dgwt-wcas-search-wrapp',
-                containerClass: 'dgwt-wcas-suggestions-wrapp',
-                containerDetailsClass: 'dgwt-wcas-details-wrapp',
-                searchInputClass: 'dgwt-wcas-search-input',
-                preloaderClass: 'dgwt-wcas-preloader',
-                closeTrigger: 'dgwt-wcas-close',
-                tabDisabled: false,
-                dataType: 'text',
-                currentRequest: null,
-                triggerSelectOnValidInput: true,
-                isPremium: false,
-                overlayMobile: false,
-                preventBadQueries: true,
-                lookupFilter: function (suggestion, originalQuery, queryLowerCase) {
-                    return suggestion.value.toLowerCase().indexOf(queryLowerCase) !== -1;
-                },
-                paramName: 'query',
-                transformResult: function (response) {
-                    return typeof response === 'string' ? $.parseJSON(response) : response;
-                },
-                showNoSuggestionNotice: false,
-                noSuggestionNotice: 'No results',
-                orientation: 'bottom',
-                forceFixPosition: false,
-                positionFixed: false
-            };
+        var that = this;
 
         // Shared variables:
         that.element = el;
@@ -146,17 +119,17 @@
         that.badQueries = [];
         that.selectedIndex = -1;
         that.currentValue = that.element.value;
-        that.intervalId = 0;
+        that.timeoutId = null;
         that.cachedResponse = {};
         that.cachedDetails = {};
         that.detailsRequestsSent = [];
-        that.onChangeInterval = null;
+        that.onChangeTimeout = null;
         that.onChange = null;
         that.isLocal = false;
         that.suggestionsContainer = null;
         that.detailsContainer = null;
         that.noSuggestionsContainer = null;
-        that.options = $.extend({}, defaults, options);
+        that.options = $.extend(true, {}, Autocomplete.defaults, options);
         that.classes = {
             selected: 'dgwt-wcas-suggestion-selected',
             suggestion: 'dgwt-wcas-suggestion',
@@ -170,14 +143,80 @@
         // Initialize and set options:
         that.initialize();
         that.setOptions(options);
+
     }
 
     Autocomplete.utils = utils;
 
     $.Autocomplete = Autocomplete;
 
-    Autocomplete.formatResult = function (suggestionValue, currentValue) {
+    Autocomplete.defaults = {
+        ajaxSettings: {},
+        autoSelectFirst: false,
+        appendTo: 'body',
+        serviceUrl: null,
+        lookup: null,
+        onSelect: null,
+        onMouseOver: null,
+        onMouseLeave: null,
+        width: 'auto',
+        containerDetailsWidth: 'auto',
+        showDetailsPanel: false,
+        showImage: false,
+        showPrice: false,
+        showSKU: false,
+        showDescription: false,
+        showSaleBadge: false,
+        showFeaturedBadge: false,
+        saleBadgeText: 'sale',
+        featuredBadgeText: 'featured',
+        minChars: 3,
+        maxHeight: 600,
+        deferRequestBy: 0,
+        params: {},
+        formatResult: _formatResult,
+        delimiter: null,
+        zIndex: 999999999,
+        type: 'GET',
+        noCache: false,
+        isRtl: false,
+        onSearchStart: noop,
+        onSearchComplete: noop,
+        onSearchError: noop,
+        preserveInput: false,
+        searchFormClass: 'dgwt-wcas-search-wrapp',
+        containerClass: 'dgwt-wcas-suggestions-wrapp',
+        containerDetailsClass: 'dgwt-wcas-details-wrapp',
+        searchInputClass: 'dgwt-wcas-search-input',
+        preloaderClass: 'dgwt-wcas-preloader',
+        closeTrigger: 'dgwt-wcas-close',
+        tabDisabled: false,
+        dataType: 'text',
+        currentRequest: null,
+        triggerSelectOnValidInput: true,
+        isPremium: false,
+        overlayMobile: false,
+        preventBadQueries: true,
+        lookupFilter: _lookupFilter,
+        paramName: 'query',
+        transformResult: _transformResult,
+        showNoSuggestionNotice: false,
+        noSuggestionNotice: 'No results',
+        orientation: 'bottom',
+        forceFixPosition: false,
+        positionFixed: false,
+        debounceWaitMs: 400
+    };
 
+    function _lookupFilter(suggestion, originalQuery, queryLowerCase) {
+        return suggestion.value.toLowerCase().indexOf(queryLowerCase) !== -1;
+    };
+
+    function _transformResult(response) {
+        return typeof response === 'string' ? $.parseJSON(response) : response;
+    };
+
+    function _formatResult(suggestionValue, currentValue) {
         // Do not replace anything if there current value is empty
         if (!currentValue) {
             return suggestionValue;
@@ -196,7 +235,6 @@
     };
 
     Autocomplete.prototype = {
-        killerFn: null,
         initialize: function () {
             var that = this,
                 suggestionSelector = '.' + that.classes.suggestion,
@@ -204,20 +242,11 @@
                 options = that.options,
                 container,
                 containerDetails,
-                closeTrigger = '.' + options.closeTrigger;
+                closeTrigger = '.' + options.closeTrigger,
+                formWrapper = that.getFormWrapper();
 
             // Remove autocomplete attribute to prevent native suggestions:
             that.element.setAttribute('autocomplete', 'off');
-
-            that.killerFn = function (e) {
-                if (
-                    $(e.target).closest('.' + that.options.containerClass).length === 0 &&
-                    $(e.target).closest('.' + that.options.containerDetailsClass).length === 0
-                ) {
-                    that.killSuggestions();
-                    that.disableKillerFn();
-                }
-            };
 
             var context = that.el.closest('.' + options.searchFormClass).data('wcas-context');
 
@@ -232,7 +261,7 @@
             container.attr('data-wcas-context', context);
             container.addClass('woocommerce');
 
-            container.appendTo('body');
+            container.appendTo(options.appendTo || 'body');
 
             // Add conditiona classes
             if (options.showImage === true)
@@ -278,17 +307,44 @@
 
             // Listen for click event on suggestions list:
             $(document).on('click.autocomplete', closeTrigger, function (e) {
-                that.killerFn(e);
+                that.hide();
                 that.clear(false);
                 $(this).removeClass(options.closeTrigger);
                 $(this).closest('.' + options.searchFormClass).find('.' + options.searchInputClass).val('').focus();
             });
 
+            // Mobile mode
+            if(
+                that.options.overlayMobile
+                && that.isMobileMode()
+            ){
+
+                formWrapper.prepend('<div class="js-dgwt-wcas-enable-mobile-form dgwt-wcas-enable-mobile-form"></div>');
+
+                var $el = formWrapper.find('.js-dgwt-wcas-enable-mobile-form');
+                $el.on('click', function (e) {
+                   that.enableOverlayMobile();
+                });
+
+            }
+
             // Listen for click close button:
             container.on('click.autocomplete', suggestionSelector, function () {
                 that.select($(this).data('index'));
-                return false;
             });
+
+            container.on('click.autocomplete', function () {
+                clearTimeout(that.blurTimeoutId);
+            })
+
+            if (that.canShowDetailsBox()) {
+                containerDetails.on('click.autocomplete', function () {
+                    clearTimeout(that.blurTimeoutId);
+                })
+            }
+
+            that.hideAfterClickOutsideListener();
+
 
             $(document).on('change', '[name="js-dgwt-wcas-quantity"]', function (e) {
                 var $input = $(this).closest('.js-dgwt-wcas-pd-addtc').find('[data-quantity]');
@@ -346,14 +402,6 @@
         onFocus: function () {
             var that = this;
 
-            if(
-                that.options.overlayMobile
-                && $(window).width() < 992
-                && ( 'ontouchend' in document )
-            ){
-               that.enableOverlayMobile();
-            }
-
             that.fixPositionCapture();
             if (that.el.val().length >= that.options.minChars) {
                 that.onValueChange();
@@ -361,7 +409,20 @@
 
         },
         onBlur: function () {
-            this.enableKillerFn();
+            var that = this,
+                options = that.options,
+                value = that.el.val(),
+                query = that.getQuery(value);
+
+            // If user clicked on a suggestion, hide() will
+            // be canceled, otherwise close suggestions
+            that.blurTimeoutId = setTimeout(function () {
+                that.hide();
+
+                if (that.selection && that.currentValue !== query) {
+                    (options.onInvalidateSelection || $.noop).call(that.element);
+                }
+            }, 200);
         },
         abortAjax: function () {
             var that = this;
@@ -373,11 +434,10 @@
         setOptions: function (suppliedOptions) {
             var that = this,
                 $suggestionsContainer = that.getSuggestionsContainer(),
-                options = that.options;
 
-            $.extend(options, suppliedOptions);
+            options = $.extend({}, that.options, suppliedOptions);
 
-            that.isLocal = $.isArray(options.lookup);
+            that.isLocal = Array.isArray(options.lookup);
 
             if (that.isLocal) {
                 options.lookup = that.verifySuggestionsFormat(options.lookup);
@@ -403,11 +463,14 @@
                 $('body').addClass('dgwt-wcas-is-details');
             }
 
-            that.options.onSearchComplete = function () {
+            options.onSearchComplete = function () {
+                var searchForm = that.getFormWrapper();
+                searchForm.removeClass('dgwt-wcas-processing');
                 that.preloader('hide', 'form', 'dgwt-wcas-inner-preloader');
                 that.preloader('show', 'form', options.closeTrigger);
             };
 
+            this.options = options;
         },
         clearCache: function () {
             this.cachedResponse = {};
@@ -424,7 +487,7 @@
         disable: function () {
             var that = this;
             that.disabled = true;
-            clearInterval(that.onChangeInterval);
+            clearTimeout(that.onChangeTimeout);
             that.abortAjax();
         },
         enable: function () {
@@ -626,37 +689,6 @@
                 $el = that.getSuggestionsContainer();
             $el[0].scrollTop = $el[0].scrollHeight;
         },
-        enableKillerFn: function () {
-            var that = this;
-            $(document).on('click.autocomplete', that.killerFn);
-        },
-        disableKillerFn: function () {
-            var that = this;
-            $(document).off('click.autocomplete', that.killerFn);
-        },
-        killSuggestions: function () {
-            var that = this;
-
-            that.stopKillSuggestions();
-            that.intervalId = window.setInterval(function () {
-                if (that.visible) {
-
-                    // No need to restore value when 
-                    // preserveInput === true, 
-                    // because we did not change it
-                    if (!that.options.preserveInput) {
-                        that.el.val(that.currentValue);
-                    }
-
-                    that.hide();
-                }
-
-                that.stopKillSuggestions();
-            }, 50);
-        },
-        stopKillSuggestions: function () {
-            window.clearInterval(this.intervalId);
-        },
         isCursorAtEnd: function () {
             var that = this,
                 valLength = that.el.val().length,
@@ -745,13 +777,13 @@
                     return;
             }
 
-            clearInterval(that.onChangeInterval);
+            clearTimeout(that.onChangeTimeout);
 
             if (that.currentValue !== that.el.val()) {
                 that.findBestHint();
                 if (that.options.deferRequestBy > 0) {
                     // Defer lookup in case when value changes very quickly:
-                    that.onChangeInterval = setInterval(function () {
+                    that.onChangeTimeout = setTimeout(function () {
                         that.onValueChange();
                     }, that.options.deferRequestBy);
                 } else {
@@ -760,6 +792,11 @@
             }
         },
         onValueChange: function () {
+            if (this.ignoreValueChange) {
+                this.ignoreValueChange = false;
+                return;
+            }
+
             var that = this,
                 options = that.options,
                 value = that.el.val(),
@@ -770,7 +807,7 @@
                 ( options.onInvalidateSelection || $.noop ).call(that.element);
             }
 
-            clearInterval(that.onChangeInterval);
+            clearTimeout(that.onChangeTimeout);
             that.currentValue = value;
             that.selectedIndex = -1;
 
@@ -795,7 +832,11 @@
         canShowDetailsBox: function () {
             var that = this;
 
-            return that.options.showDetailsPanel == true && $(window).width() >= 992 && !( 'ontouchend' in document );
+            return that.options.showDetailsPanel == true && !that.isMobileMode();
+        },
+        isMobileMode: function(){
+            var that = this;
+            return $(window).width() < that.options.mobileBreakpoint || ( 'ontouchend' in document )
         },
         getQuery: function (value) {
             var delimiter = this.options.delimiter,
@@ -832,18 +873,21 @@
                 that = this,
                 options = that.options,
                 serviceUrl = options.serviceUrl,
+                searchForm = that.getFormWrapper(),
                 params,
                 cacheKey,
                 ajaxSettings;
 
             options.params[options.paramName] = q;
-            params = options.ignoreParams ? null : options.params;
 
             that.preloader('show', 'form', 'dgwt-wcas-inner-preloader');
+            searchForm.addClass('dgwt-wcas-processing');
 
             if (options.onSearchStart.call(that.element, options.params) === false) {
                 return;
             }
+
+            params = options.ignoreParams ? null : options.params;
 
             if ($.isFunction(options.lookup)) {
                 options.lookup(q, function (data) {
@@ -865,7 +909,7 @@
                 response = that.cachedResponse[cacheKey];
             }
 
-            if (response && $.isArray(response.suggestions)) {
+            if (response && Array.isArray(response.suggestions)) {
                 that.suggestions = response.suggestions;
                 that.suggest();
                 that.getDetails(response.suggestions[0]);
@@ -882,22 +926,34 @@
 
                 $.extend(ajaxSettings, options.ajaxSettings);
 
-                that.currentRequest = $.ajax(ajaxSettings).done(function (data) {
-                    var result;
-                    that.currentRequest = null;
-                    result = options.transformResult(data, q);
+                ajaxDebounceState.object = that;
+                ajaxDebounceState.ajaxSettings = ajaxSettings;
 
-                    if (typeof result.suggestions !== 'undefined') {
-                        that.processResponse(result, q, cacheKey);
-                        that.getDetails(result.suggestions[0]);
-                    }
+                utils.debounce(function () {
 
-                    that.fixPositionCapture();
+                    var that = ajaxDebounceState.object,
+                        ajaxSettings = ajaxDebounceState.ajaxSettings;
 
-                    options.onSearchComplete.call(that.element, q, result.suggestions);
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    options.onSearchError.call(that.element, q, jqXHR, textStatus, errorThrown);
-                });
+                    that.currentRequest = $.ajax(ajaxSettings).done(function (data) {
+                        var result;
+                        that.currentRequest = null;
+                        result = that.options.transformResult(data, q);
+
+                        if (typeof result.suggestions !== 'undefined') {
+                            that.processResponse(result, q, cacheKey);
+                            that.getDetails(result.suggestions[0]);
+                        }
+
+                        that.fixPositionCapture();
+
+                        that.options.onSearchComplete.call(that.element, q, result.suggestions);
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        that.options.onSearchError.call(that.element, q, jqXHR, textStatus, errorThrown);
+                    });
+
+                }, options.debounceWaitMs);
+
+
             } else {
                 options.onSearchComplete.call(that.element, q, []);
             }
@@ -1021,7 +1077,7 @@
 
             that.visible = false;
             that.selectedIndex = -1;
-            clearInterval(that.onChangeInterval);
+            clearTimeout(that.onChangeTimeout);
             $container.hide();
             $container.removeClass(that.classes.suggestionsContainerOrientTop);
             $containerDetails.hide();
@@ -1030,6 +1086,42 @@
             $('body').removeClass('dgwt-wcas-block-scroll');
 
             that.signalHint(null);
+        },
+        hideAfterClickOutsideListener: function(){
+            var that = this;
+            if(!that.isMobileMode()){
+
+                $(document).mouseup(function(e)
+                {
+                    if(!that.visible){
+                        return;
+                    }
+
+                    var $container = that.getSuggestionsContainer(),
+                        $containerDetails = that.getDetailsContainer(),
+                        outsideForm = !($(e.target).closest('.' + that.options.searchFormClass).length > 0 || $(e.target).hasClass(that.options.searchFormClass)),
+                        outsideContainer = !($(e.target).closest('.' + that.options.containerClass).length > 0 || $(e.target).hasClass(that.options.containerClass));
+
+
+                    if(!that.canShowDetailsBox()){
+
+                        if(outsideForm && outsideContainer){
+                            that.hide();
+                        }
+
+                    }else{
+
+                        var outsidecontainerDetails = !($(e.target).closest('.' + that.options.containerDetailsClass).length > 0 || $(e.target).hasClass(that.options.containerDetailsClass));
+
+                        if(outsideForm && outsideContainer && outsidecontainerDetails){
+                            that.hide();
+                        }
+
+                    }
+
+                });
+
+            }
         },
         suggest: function () {
             if (!this.suggestions.length) {
@@ -1103,6 +1195,9 @@
                     } else if (suggestion.taxonomy === 'product_tag') {
                         classes += ' dgwt-wcas-suggestion-tag';
                         prepend += '<span class="dgwt-wcas-st--tax">' + dgwt_wcas.t.tag + '</span>';
+                    } else if (options.isPremium && suggestion.taxonomy === options.taxonomyBrands) {
+                        classes += ' dgwt-wcas-suggestion-brand';
+                        prepend += '<span class="dgwt-wcas-st--tax">' + dgwt_wcas.t.brand + '</span>';
                     } else if (typeof suggestion.type != 'undefined' && suggestion.type === 'more_products') {
                         classes += ' js-dgwt-wcas-suggestion-more dgwt-wcas-suggestion-more';
                         innerClass = 'dgwt-wcas-st-more';
@@ -1218,14 +1313,21 @@
         },
         noSuggestions: function () {
             var that = this,
+                beforeRender = that.options.beforeRender,
                 container = that.getSuggestionsContainer(),
                 noSuggestionsContainer = $(that.noSuggestionsContainer);
 
             // Some explicit steps. Be careful here as it easy to get
             // noSuggestionsContainer removed from DOM if not detached properly.
             noSuggestionsContainer.detach();
-            container.empty(); // clean suggestions if any
+
+            // clean suggestions if any
+            container.empty();
             container.append(noSuggestionsContainer);
+
+            if ($.isFunction(beforeRender)) {
+                beforeRender.call(that.element, container, that.suggestions);
+            }
 
             that.fixPositionCapture();
 
@@ -1444,7 +1546,6 @@
             var that = this;
             that.hide();
             that.onSelect(i);
-            that.disableKillerFn();
         },
         moveUp: function () {
             var that = this;
@@ -1454,8 +1555,9 @@
             }
 
             if (that.selectedIndex === 0) {
-                that.getSuggestionsContainer().children().first().removeClass(that.classes.selected);
+                that.getSuggestionsContainer().children('.' + that.classes.suggestion).first().removeClass(that.classes.selected);
                 that.selectedIndex = -1;
+                that.ignoreValueChange = false;
                 that.el.val(that.currentValue);
                 that.findBestHint();
                 return;
@@ -1497,6 +1599,11 @@
             }
 
             if (!that.options.preserveInput) {
+                // During onBlur event, browser will trigger "change" event,
+                // because value has changed, to avoid side effect ignore,
+                // that event, so that correct suggestion can be selected
+                // when clicking on suggestion with a mouse
+                that.ignoreValueChange = true;
                 that.el.val(that.getValue(that.suggestions[index].value));
             }
             that.signalHint(null);
@@ -1572,7 +1679,6 @@
         dispose: function () {
             var that = this;
             that.el.off('.autocomplete').removeData('autocomplete');
-            that.disableKillerFn();
             $(window).off('resize.autocomplete', that.fixPositionCapture);
             $('.' + that.options.containerClass).remove();
             $('.' + that.options.containerDetailsClass).remove();
@@ -1604,7 +1710,7 @@
             html += '</div>';
 
             // Create overlay
-            $('body').append(html);
+            $(that.options.mobileOverlayWrapper).append(html);
             $overlayWrap = $('.js-dgwt-wcas-overlay-mobile');
             $overlayWrap.css('zIndex', zIndex);
 
@@ -1629,9 +1735,6 @@
 
             var $suggestionsWrapp = that.getSuggestionsContainer();
 
-            that.killSuggestions();
-            that.disableKillerFn();
-
             var $clonedForm = $('.js-dgwt-wcas-om-bar').find('.' + that.options.searchFormClass);
 
             if($clonedForm.hasClass('dgwt-wcas-has-submit-off')){
@@ -1649,6 +1752,10 @@
 
             setTimeout(function(){
                 $clonedForm.find('.' + that.options.searchInputClass).val('');
+                var $closeBtn = $clonedForm.find('.dgwt-wcas-close');
+                if($clonedForm.length > 0){
+                    $closeBtn.removeClass('dgwt-wcas-close');
+                }
             }, 150);
 
 
@@ -1699,6 +1806,10 @@
         });
     };
 
+    // Don't overwrite if it already exists
+    if (!$.fn.autocomplete) {
+        $.fn.autocomplete = $.fn.dgwtWcasAutocomplete;
+    }
 
     ( function () {
 
@@ -1728,9 +1839,10 @@
              /* Fire autocomplete
              /*------------ -----------------------------------------------------*/
             var showDetailsPanel = dgwt_wcas.show_details_box == 1 ? true : false;
+            var mobileBreakpoint = dgwt_wcas.mobile_breakpoint;
 
             // Disable details panel on small screens
-            if (jQuery(window).width() < 992 || ( 'ontouchend' in document )) {
+            if (jQuery(window).width() < mobileBreakpoint || ( 'ontouchend' in document )) {
                 showDetailsPanel = false;
             }
 
@@ -1752,7 +1864,11 @@
                 featuredBadgeText: dgwt_wcas.t.featured_badge,
                 isRtl: dgwt_wcas.is_rtl == 1 ? true : false,
                 isPremium: dgwt_wcas.is_premium == 1 ? true : false,
-                overlayMobile: dgwt_wcas.overlay_mobile == 1 ? true : false
+                taxonomyBrands: dgwt_wcas.taxonomy_brands,
+                overlayMobile: dgwt_wcas.overlay_mobile == 1 ? true : false,
+                mobileBreakpoint: mobileBreakpoint,
+                mobileOverlayWrapper: dgwt_wcas.mobile_overlay_wrapper,
+                debounceWaitMs: dgwt_wcas.debounce_wait_ms
             });
 
         });

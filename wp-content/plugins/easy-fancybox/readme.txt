@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ravan
 Tags: fancybox, lightbox, gallery, image, photo, video, flash, overlay, youtube, vimeo, dailymotion, pdf, svg, iframe, swf, jquery, webp
 Requires at least: 3.3
 Tested up to: 5.2
-Stable tag: 1.8.17
+Stable tag: 1.8.18
 
 Easily enable the FancyBox jQuery extension on just about all media links. Multi-Site compatible. Supports iFrame and Flash movies.
 
@@ -493,8 +493,8 @@ If you still do not get to see your images in FancyBox, ask on the [Easy FancyBo
 
 == Upgrade Notice ==
 
-= 1.8.17 =
-Fix compat messages and links
+= 1.8.18 =
+Fix Jetpack Tiled Gallery compat + security issue reported by Jakob Hagl sba-research.org
 
 
 == Changelog ==
@@ -502,6 +502,7 @@ Fix compat messages and links
 = 1.8.18 =
 * FIX: Jetpack Tiled Gallery block compatibility
 * Don't include mousewheel script by default
+* SECURITY: fixed failing color value sanitization + added inline styles output filter, issue reported by Jakob Hagl sba-research.org
 
 = 1.8.17 =
 * Pro compatibility messages

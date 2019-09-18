@@ -395,6 +395,31 @@ class SettingsAPI
     }
     
     /**
+     * Displays a selectize multiple select for a settings field
+     *
+     * @param array   $args settings field args
+     */
+    function callback_selectize( $args )
+    {
+        $value = apply_filters(
+            'dgwt/wcas/settings/option_value',
+            esc_attr( $this->get_option( $args['id'], $args['std'] ) ),
+            $args['std'],
+            $args
+        );
+        $options = ( !empty($args['options']) && is_array( $args['options'] ) ? $args['options'] : array() );
+        $html = sprintf(
+            '<input type="select-multiple" data-options="%4$s" class="dgwt-wcas-selectize" autocomplete="off" id="%1$s[%2$s]" name="%1$s[%2$s]" value="%3$s"/>',
+            $this->name,
+            $args['id'],
+            $value,
+            http_build_query( $options )
+        );
+        $html .= $this->get_field_description( $args );
+        echo  $html ;
+    }
+    
+    /**
      * Displays a textarea for a settings field
      *
      * @param array   $args settings field args
@@ -647,6 +672,9 @@ class SettingsAPI
             $html .= sprintf( '<a href="#%1$s" class="nav-tab" id="%1$s-tab">%2$s</a>', $tab['id'], $tab['title'] );
         }
         $html .= '<a target="_blank" href="' . dgoraAsfwFs()->contact_url() . '" class="js-nav-tab-minor nav-tab-minor nav-tab-minor-contact" >' . __( 'Contact', 'ajax-search-for-woocommerce' ) . '</a>';
+        if ( !dgoraAsfwFs()->is_premium() ) {
+            $html .= '<a target="_blank" href="https://ajaxsearch.pro/showcase/?utm_source=wp-admin&utm_medium=referral&utm_campaign=settings&utm_content=showcase&utm_gen=utmdc" class="js-nav-tab-minor nav-tab-minor nav-tab-minor-showcase" >' . __( 'Showcase', 'ajax-search-for-woocommerce' ) . '</a>';
+        }
         $html .= '</h2>';
         echo  $html ;
     }

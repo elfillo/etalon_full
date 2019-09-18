@@ -688,11 +688,6 @@
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
-    @media screen and (max-width: 1280px) {
-      .shop_list {
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; } }
     .shop_list--item {
       width: 310px;
       margin-right: 5px;
@@ -1223,6 +1218,65 @@
     margin: 0 auto;
     margin-bottom: 20px; }
 
+.designers {
+  width: 100%; }
+  .designers_list {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .designers_list--item {
+      width: 310px;
+      margin-right: 5px;
+      margin-left: 5px;
+      margin-bottom: 20px; }
+      .designers_list--item .image {
+        width: 100%;
+        height: 303px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        overflow: hidden; }
+        .designers_list--item .image img {
+          width: 100%;
+          height: auto;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center; }
+      .designers_list--item .text {
+        width: 100%;
+        padding: 0 10px 0 21px;
+        position: relative; }
+        .designers_list--item .text .name {
+          width: 100%;
+          height: 36px;
+          overflow: hidden;
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 10px;
+          display: -webkit-box;
+          word-spacing: 100%;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical; }
+        .designers_list--item .text p {
+          display: block;
+          width: 100%;
+          font-size: 13px;
+          margin-bottom: 10px; }
+        .designers_list--item .text .rating_wrapper {
+          padding-bottom: 20px; }
+        .designers_list--item .text .buy {
+          position: absolute;
+          bottom: 0;
+          right: 10px; }
+
 @font-face {
   font-family: "Century Gothic";
   src: url("../fonts/CenturyGothic_regular.ttf") format("truetype");
@@ -1300,5 +1354,11 @@ body, html {
         -ms-flex-pack: center;
             justify-content: center;
     margin-bottom: 15px; }
+
+.red_star {
+  width: 14px;
+  height: 14px;
+  margin-right: 9px;
+  background: url("../img/icons/red_star.png") no-repeat center; }
 
 /*# sourceMappingURL=main.css.map */

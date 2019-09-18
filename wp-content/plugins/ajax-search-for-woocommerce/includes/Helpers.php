@@ -652,4 +652,76 @@ class Helpers
         $logger->log($level, $message, $context);
     }
 
+    /**
+     * Get searchable custom fields keys
+     *
+     * @return array
+     */
+    public static function getSearchableCustomFields()
+    {
+        global $wpdb;
+
+        $customFields = array();
+
+        $customFieldsTrans = get_transient('dgwt_wcas_searchable_custom_fields');
+
+        if(!empty($customFieldsTrans) && is_array($customFieldsTrans)){
+            return $customFieldsTrans;
+        }
+
+        $exludedMetaKeys = array(
+            '_sku',
+            '_wp_old_date',
+            '_tax_status',
+            '_stock_status',
+            '_product_version',
+            '_smooth_slider_style',
+            'auctioninc_calc_method',
+            'auctioninc_pack_method',
+            '_thumbnail_id',
+            '_product_image_gallery',
+            'pdf_download',
+            'slide_template',
+            'cad_iframe',
+            'dwnloads',
+            'edrawings_file',
+            '3d_pdf_download',
+            '3d_pdf_render',
+            '_original_id'
+        );
+
+        $exludedMetaKeys = apply_filters('dgwt/wcas/indexer/exluded_meta_keys', $exludedMetaKeys);
+
+
+        $sql = "SELECT DISTINCT meta_key
+                FROM $wpdb->postmeta as pm
+                INNER JOIN $wpdb->posts as p ON p.ID = pm.post_id
+                WHERE p.post_type = 'product'
+                AND pm.meta_value NOT LIKE 'field_%'
+                AND pm.meta_value NOT LIKE 'a:%'
+                AND pm.meta_value NOT LIKE '%\%\%%'
+                AND pm.meta_value NOT LIKE '_oembed_%'
+                AND pm.meta_value NOT REGEXP '^1[0-9]{9}'
+                AND pm.meta_value NOT IN ('1','0','-1','no','yes','[]', '')
+               ";
+
+        $metaKeys = $wpdb->get_col($sql);
+
+        if(!empty($metaKeys)){
+            foreach ($metaKeys as $metaKey) {
+
+                if(!in_array($metaKey, $exludedMetaKeys)){
+                    $label = $metaKey; //@TODO Recognize labels based on meta key or publci known as Yoast SEO etc.
+                    $customFields[$metaKey] = $label;
+                }
+
+            }
+        }
+
+        $customFields = array_reverse($customFields);
+
+        set_transient('dgwt_wcas_searchable_custom_fields', $customFields, 60 * 60 * 24);
+
+        return $customFields;
+    }
 }

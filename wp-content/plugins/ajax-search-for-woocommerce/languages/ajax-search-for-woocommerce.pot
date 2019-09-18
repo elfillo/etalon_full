@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-03 21:18+0000\n"
+"POT-Creation-Date: 2019-08-27 07:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Damian Góra <wp@damiangora.com>\n"
 "Language-Team: \n"
@@ -14,47 +14,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: ajax-search-for-woocommerce.php:198
+#: ajax-search-for-woocommerce.php:201
 msgid ""
 "<b>AJAX Search for WooCommerce</b>: You need PHP version at least 5.3 to run "
 "this plugin. You are currently using PHP version "
 msgstr ""
 
-#: ajax-search-for-woocommerce.php:221
+#: ajax-search-for-woocommerce.php:224
 msgid ""
 "<b>AJAX Search for WooCommerce</b>: You need PHP version at least 5.5 to run "
 "this plugin. You are currently using PHP version "
 msgstr ""
 
-#: ajax-search-for-woocommerce.php:250
+#: ajax-search-for-woocommerce.php:253
 #, php-format
 msgid ""
 "<b>AJAX Search for WooCommerce</b>:<br /> Your PHP version <b><i>%s</i></b> "
 "will not longer supported in the next plugin releases."
 msgstr ""
 
-#: ajax-search-for-woocommerce.php:252
+#: ajax-search-for-woocommerce.php:255
 msgid ""
 " You have to update your PHP version to least 5.5 (recommended 7.2 or "
 "greater)."
 msgstr ""
 
-#: ajax-search-for-woocommerce.php:255
+#: ajax-search-for-woocommerce.php:258
 msgid ""
 "If you cannot upgrade your PHP version yourself, you can send an email to "
 "your host."
 msgstr ""
 
-#: ajax-search-for-woocommerce.php:258
+#: ajax-search-for-woocommerce.php:261
 msgid ""
 "If you do not upgrade the php version, the next plugin release will not work!"
 msgstr ""
 
-#: ajax-search-for-woocommerce.php:263
+#: ajax-search-for-woocommerce.php:266
 msgid "Remind me again in week."
 msgstr ""
 
-#: ajax-search-for-woocommerce.php:285
+#: ajax-search-for-woocommerce.php:288
 #, php-format
 msgid ""
 "<b>AJAX Search for WooCommerce</b> is enabled but not effective. It requires "
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Products search"
 msgstr ""
 
-#: partials/search-form.php:26 includes/Settings.php:188
+#: partials/search-form.php:26 includes/Settings.php:190
 #: backward-compatibility/1-1-7/search-form.php:74
 msgid "Search for products..."
 msgstr ""
@@ -110,136 +110,128 @@ msgstr ""
 msgid "by simple tricks"
 msgstr ""
 
-#: includes/Settings.php:136
+#: includes/Settings.php:138
 msgid "How to use?"
 msgstr ""
 
-#: includes/Settings.php:142
+#: includes/Settings.php:144
 msgid "Suggestions limit"
 msgstr ""
 
-#: includes/Settings.php:145
+#: includes/Settings.php:147
 msgid "Maximum number of suggestions rows."
 msgstr ""
 
-#: includes/Settings.php:150
+#: includes/Settings.php:152
 msgid "Minimum characters"
 msgstr ""
 
-#: includes/Settings.php:153
+#: includes/Settings.php:155
 msgid "Minimum number of characters required to trigger autosuggest."
 msgstr ""
 
-#: includes/Settings.php:158
+#: includes/Settings.php:160
 msgid "Max form width"
 msgstr ""
 
-#: includes/Settings.php:161
+#: includes/Settings.php:163
 msgid "To set 100% width leave blank"
 msgstr ""
 
-#: includes/Settings.php:166
+#: includes/Settings.php:168
 msgid "Show submit button"
 msgstr ""
 
-#: includes/Settings.php:173
+#: includes/Settings.php:175
 msgid "Custom labels"
 msgstr ""
 
-#: includes/Settings.php:179
+#: includes/Settings.php:181
 msgid "Search submit button text"
 msgstr ""
 
-#: includes/Settings.php:181
+#: includes/Settings.php:183
 msgid "To display the magnifier icon leave this field empty."
 msgstr ""
 
-#: includes/Settings.php:182
+#: includes/Settings.php:184
 msgid "Search"
 msgstr ""
 
-#: includes/Settings.php:186
+#: includes/Settings.php:188
 msgid "Search input placeholder"
 msgstr ""
 
-#: includes/Settings.php:192
+#: includes/Settings.php:194
 msgid "More results"
 msgstr ""
 
-#: includes/Settings.php:194 includes/Scripts.php:41
+#: includes/Settings.php:196 includes/Scripts.php:41
 msgid "See all results..."
 msgstr ""
 
-#: includes/Settings.php:198
+#: includes/Settings.php:200
 msgctxt "admin"
 msgid "No results"
 msgstr ""
 
-#: includes/Settings.php:200 includes/Scripts.php:42
+#: includes/Settings.php:202 includes/Scripts.php:42
 msgid "No results"
 msgstr ""
 
-#: includes/Settings.php:206
+#: includes/Settings.php:208
 msgid "Suggestions output"
 msgstr ""
 
-#: includes/Settings.php:212
+#: includes/Settings.php:214
 msgid "Show product image"
 msgstr ""
 
-#: includes/Settings.php:218
+#: includes/Settings.php:220
 msgid "Show price"
 msgstr ""
 
-#: includes/Settings.php:224
+#: includes/Settings.php:226
 msgid "Show product description"
 msgstr ""
 
-#: includes/Settings.php:230
+#: includes/Settings.php:232
 msgid "Show SKU"
 msgstr ""
 
-#: includes/Settings.php:236
-msgid "Also show matching categories"
-msgstr ""
-
-#: includes/Settings.php:242
-msgid "Also show matching tags"
-msgstr ""
-
-#: includes/Settings.php:260
+#: includes/Settings.php:250
 msgid "Mobile"
 msgstr ""
 
-#: includes/Settings.php:266
+#: includes/Settings.php:256
 msgid "Overlay search (beta)"
 msgstr ""
 
-#: includes/Settings.php:267
+#: includes/Settings.php:257
 msgid "Enhances user experience on mobile"
 msgstr ""
 
-#: includes/Settings.php:273
+#: includes/Settings.php:263
 msgid "Preloader"
 msgstr ""
 
-#: includes/Settings.php:279
+#: includes/Settings.php:269
 msgid "Show preloader"
 msgstr ""
 
-#: includes/Settings.php:285
+#: includes/Settings.php:275
 msgid "Upload preloader image"
 msgstr ""
 
-#: includes/Settings.php:291
+#: includes/Settings.php:281
 msgid "Details box"
 msgstr ""
 
-#: includes/Settings.php:297
+#: includes/Settings.php:287
 msgid "Show details box"
 msgstr ""
 
-#: includes/Settings.php:301
+#: includes/Settings.php:291
 #, php-format
 msgid ""
 "The Details box is an additional container for extended information. The "
@@ -248,208 +240,220 @@ msgid ""
 "appear.</a>"
 msgstr ""
 
-#: includes/Settings.php:306
+#: includes/Settings.php:296
 msgid "Products list"
 msgstr ""
 
-#: includes/Settings.php:308 includes/Settings.php:322
-#: includes/Settings.php:336
+#: includes/Settings.php:298 includes/Settings.php:312
+#: includes/Settings.php:326
 msgid "Applies only to category or tags suggestions type"
 msgstr ""
 
-#: includes/Settings.php:310
+#: includes/Settings.php:300
 msgid "All Product"
 msgstr ""
 
-#: includes/Settings.php:311
+#: includes/Settings.php:301
 msgid "Featured Products"
 msgstr ""
 
-#: includes/Settings.php:312
+#: includes/Settings.php:302
 msgid "On-sale Products"
 msgstr ""
 
-#: includes/Settings.php:319
+#: includes/Settings.php:309
 msgid "Order by"
 msgstr ""
 
-#: includes/Settings.php:324
+#: includes/Settings.php:314
 msgid "Date"
 msgstr ""
 
-#: includes/Settings.php:325
+#: includes/Settings.php:315
 msgid "Price"
 msgstr ""
 
-#: includes/Settings.php:326
+#: includes/Settings.php:316
 msgid "Random"
 msgstr ""
 
-#: includes/Settings.php:327
+#: includes/Settings.php:317
 msgid "Sales"
 msgstr ""
 
-#: includes/Settings.php:333
+#: includes/Settings.php:323
 msgid "Order"
 msgstr ""
 
-#: includes/Settings.php:338
+#: includes/Settings.php:328
 msgid "DESC"
 msgstr ""
 
-#: includes/Settings.php:339
+#: includes/Settings.php:329
 msgid "ASC"
 msgstr ""
 
-#: includes/Settings.php:347
+#: includes/Settings.php:337
 msgid "Search form"
 msgstr ""
 
-#: includes/Settings.php:353
+#: includes/Settings.php:343
 msgid "Search input background"
 msgstr ""
 
-#: includes/Settings.php:359
+#: includes/Settings.php:349
 msgid "Search input text"
 msgstr ""
 
-#: includes/Settings.php:365
+#: includes/Settings.php:355
 msgid "Search input border"
 msgstr ""
 
-#: includes/Settings.php:371
+#: includes/Settings.php:361
 msgid "Search submit background"
 msgstr ""
 
-#: includes/Settings.php:377
+#: includes/Settings.php:367
 msgid "Search submit text"
 msgstr ""
 
-#: includes/Settings.php:383
+#: includes/Settings.php:373
 msgid "Suggestions"
 msgstr ""
 
-#: includes/Settings.php:389
+#: includes/Settings.php:379
 msgid "Suggestion background"
 msgstr ""
 
-#: includes/Settings.php:395
+#: includes/Settings.php:385
 msgid "Suggestion selected"
 msgstr ""
 
-#: includes/Settings.php:401
+#: includes/Settings.php:391
 msgid "Text color"
 msgstr ""
 
-#: includes/Settings.php:407
+#: includes/Settings.php:397
 msgid "Highlight color"
 msgstr ""
 
-#: includes/Settings.php:413
+#: includes/Settings.php:403
 msgid "Border color"
 msgstr ""
 
-#: includes/Settings.php:421
-msgid "Search scope"
+#: includes/Settings.php:411
+msgid "Products search scope"
 msgstr ""
 
-#: includes/Settings.php:427
+#: includes/Settings.php:417
 msgid "Info"
 msgstr ""
 
-#: includes/Settings.php:429
+#: includes/Settings.php:419
 msgid ""
 "Searching in products names is always enabled. You can extend or narrow the "
 "searching scope using the following options."
 msgstr ""
 
-#: includes/Settings.php:434
+#: includes/Settings.php:424
 msgid "Search in description"
 msgstr ""
 
-#: includes/Settings.php:440
+#: includes/Settings.php:430
 msgid "Search in short description"
 msgstr ""
 
-#: includes/Settings.php:446
+#: includes/Settings.php:436
 msgid "Search in SKU"
 msgstr ""
 
-#: includes/Settings.php:448
+#: includes/Settings.php:438
 msgid "Searching also in variable products SKU"
 msgstr ""
 
-#: includes/Settings.php:448
+#: includes/Settings.php:438
 #, php-format
 msgid ""
 "Searching in variable products SKU is available only in <a href=\"%s\">the "
-"pro version</a>. It will also be available in the free version soon."
+"pro version</a>."
 msgstr ""
 
-#: includes/Settings.php:453
+#: includes/Settings.php:443
 msgid "Search in attributes"
 msgstr ""
 
-#: includes/Settings.php:460
+#: includes/Settings.php:450
 msgid "Exclude 'out of stock' products"
 msgstr ""
 
+#: includes/Settings.php:456
+msgid "Show in suggestions also"
+msgstr ""
+
+#: includes/Settings.php:462
+msgid "Matching product categories"
+msgstr ""
+
 #: includes/Settings.php:468
+msgid "Matching product tags"
+msgstr ""
+
+#: includes/Settings.php:476
 msgid "Pro features"
 msgstr ""
 
-#: includes/Settings.php:474
+#: includes/Settings.php:482
 msgid "Fuzziness"
 msgstr ""
 
-#: includes/Settings.php:480
+#: includes/Settings.php:488
 msgid "Speed up search!"
 msgstr ""
 
-#: includes/Settings.php:487
+#: includes/Settings.php:495
 msgid ""
 "<strong>Increases sales conversions.</strong> Returns sugestions based on "
 "likely relevance even though a search keyword may not exactly match. E.g if "
 "you type \"ipho<b>m</b>e\" you get the same results as for \"iphone\""
 msgstr ""
 
-#: includes/Settings.php:493
+#: includes/Settings.php:501
 msgid "Profits"
 msgstr ""
 
-#: includes/Settings.php:500 includes/Settings.php:532
+#: includes/Settings.php:508 includes/Settings.php:540
 msgid "Fuzzy matching"
 msgstr ""
 
-#: includes/Settings.php:505 includes/Settings.php:537
+#: includes/Settings.php:513 includes/Settings.php:545
 msgid "-- Disabled"
 msgstr ""
 
-#: includes/Settings.php:506 includes/Settings.php:538
+#: includes/Settings.php:514 includes/Settings.php:546
 msgid "Soft"
 msgstr ""
 
-#: includes/Settings.php:507 includes/Settings.php:539
+#: includes/Settings.php:515 includes/Settings.php:547
 msgid "Normal"
 msgstr ""
 
-#: includes/Settings.php:508 includes/Settings.php:540
+#: includes/Settings.php:516 includes/Settings.php:548
 msgid "Hard"
 msgstr ""
 
-#: includes/Settings.php:518
+#: includes/Settings.php:526
 msgid "Select the database"
 msgstr ""
 
-#: includes/Settings.php:522
+#: includes/Settings.php:530
 msgid "SQLite"
 msgstr ""
 
-#: includes/Settings.php:523
+#: includes/Settings.php:531
 msgid "MySQL"
 msgstr ""
 
-#: includes/Settings.php:552 includes/Settings.php:560
+#: includes/Settings.php:560 includes/Settings.php:568
 msgid "Index status"
 msgstr ""
 
@@ -763,35 +767,52 @@ msgstr ""
 
 #: partials/admin/indexer-header-demo.php:3
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:414
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:398
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:422
 msgid "The search index does not exist yet. Build it now."
 msgstr ""
 
 #: partials/admin/indexer-header-demo.php:7
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:443
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:430
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:454
 msgid "Build index"
 msgstr ""
 
-#: partials/admin/how-to-use.php:10
-msgid "There are two easy ways to display the search form"
-msgstr ""
-
-#: partials/admin/how-to-use.php:11
-#, php-format
-msgid "Use a shortcode %s"
-msgstr ""
-
-#: partials/admin/how-to-use.php:12
-#, php-format
-msgid "Go to the %s and choose \"Woo AJAX Search\""
-msgstr ""
-
-#: partials/admin/how-to-use.php:12
-msgid "Widgets Screen"
+#: partials/admin/how-to-use.php:13
+msgid "There are four easy ways to display the search form in your theme"
 msgstr ""
 
 #: partials/admin/how-to-use.php:14
+#, php-format
+msgid ""
+"By settings - we noticed that you use <b>%s theme</b>. Fantastic! We support "
+"this theme and you can easly replace default search form. Click <b>%s "
+"theme</b> tab above for more details."
+msgstr ""
+
+#: partials/admin/how-to-use.php:15 partials/admin/how-to-use.php:20
+#, php-format
+msgid "As a widget - go to the %s and choose \"Woo AJAX Search\""
+msgstr ""
+
+#: partials/admin/how-to-use.php:15 partials/admin/how-to-use.php:20
+msgid "Widgets Screen"
+msgstr ""
+
+#: partials/admin/how-to-use.php:16 partials/admin/how-to-use.php:21
+#, php-format
+msgid "By shortcode - %s"
+msgstr ""
+
+#: partials/admin/how-to-use.php:17 partials/admin/how-to-use.php:22
+#, php-format
+msgid "By PHP - %s"
+msgstr ""
+
+#: partials/admin/how-to-use.php:19
+msgid "There are three easy ways to display the search form in your theme"
+msgstr ""
+
+#: partials/admin/how-to-use.php:26
 #, php-format
 msgid ""
 "Are there any difficulties? <a href=\"%s\">Upgrade now</a> and our "
@@ -1012,20 +1033,6 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: includes/Integrations/Themes/Storefront.php:28
-msgid "Storefront theme"
-msgstr ""
-
-#: includes/Integrations/Themes/Storefront.php:35
-msgid "Replace search form"
-msgstr ""
-
-#: includes/Integrations/Themes/Storefront.php:36
-msgid ""
-"Replace the Storefront theme's default product search with the Ajax Search "
-"for WooCommerce form."
-msgstr ""
-
 #: includes/Admin/Promo/Upgrade.php:50
 msgid "Speed up search! (even 10x faster) - users love it!"
 msgstr ""
@@ -1082,7 +1089,7 @@ msgid "No thanks"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:149
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:151
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:154
 msgctxt "Admin, logs"
 msgid ""
 "The request to build a new index rejected. Another process is in progress."
@@ -1090,21 +1097,21 @@ msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:155
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:318
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:159
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:302
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:162
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:325
 msgctxt "Admin, logs"
 msgid "There are no tables in the database"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:163
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:168
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:171
 msgctxt "Admin, logs"
 msgid "Indexer started"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:183
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:202
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:192
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:208
 msgctxt "Admin, logs"
 msgid "[Readable index] Building..."
 msgstr ""
@@ -1117,77 +1124,109 @@ msgid "[Readable index] Completed"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:209
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:216
 #: includes/Engines/TNTSearch/Indexer/Searchable/AsyncRequest.php:37
-#: includes/Engines/TNTSearchMySQL/Indexer/Searchable/AsyncRequest.php:37
 msgctxt "Admin, logs"
 msgid "[Searchable index] Building..."
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:220
 #: includes/Engines/TNTSearch/Indexer/Searchable/AsyncRequest.php:53
-#: includes/Engines/TNTSearchMySQL/Indexer/Searchable/AsyncRequest.php:53
+#: includes/Engines/TNTSearchMySQL/Indexer/Searchable/AsyncProcess.php:166
 msgctxt "Admin, logs"
 msgid "[Searchable index] Completed"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:393
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:377
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:400
 msgid "Wait... Indexing in progress"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:394
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:378
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:401
 msgid "This process will continue in the background. You can leave this page!"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:398
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:382
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:406
 msgid "Wait... The index build process is canceling"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:399
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:383
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:407
 msgid "Canceling..."
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:404
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:388
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:412
 msgid "The search index was built successfully."
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:405
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:389
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:413
 msgid "Completed. Works."
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:409
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:393
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:417
 msgid "The search index could not be built."
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:410
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:394
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:418
 msgid "Errors"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:415
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:399
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:423
 msgid "Not exist"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:437
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:421
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:445
 msgid "Stop process"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:439
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:424
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:448
 msgid "Rebuild index"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Buildier.php:441
-#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:427
+#: includes/Engines/TNTSearchMySQL/Indexer/Buildier.php:451
 msgid "Try to build the index again."
+msgstr ""
+
+#: includes/Integrations/Themes/Flatsome/Flatsome.php:34
+#: includes/Integrations/Themes/Storefront/Storefront.php:34
+#, php-format
+msgctxt "name of a theme"
+msgid "%s theme"
+msgstr ""
+
+#: includes/Integrations/Themes/Flatsome/Flatsome.php:53
+msgid "Flatsome theme"
+msgstr ""
+
+#: includes/Integrations/Themes/Flatsome/Flatsome.php:60
+#: includes/Integrations/Themes/Storefront/Storefront.php:60
+msgid "Replace search form"
+msgstr ""
+
+#: includes/Integrations/Themes/Flatsome/Flatsome.php:61
+msgid ""
+"Replace the Flatsome theme's default product search with the Ajax Search for "
+"WooCommerce form."
+msgstr ""
+
+#: includes/Integrations/Themes/Storefront/Storefront.php:53
+msgid "Storefront theme"
+msgstr ""
+
+#: includes/Integrations/Themes/Storefront/Storefront.php:61
+msgid ""
+"Replace the Storefront theme's default product search with the Ajax Search "
+"for WooCommerce form."
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Taxonomy/Indexer.php:199
@@ -1217,7 +1256,6 @@ msgid "[Taxonomy index] Completed: %s, Not indexed: %s"
 msgstr ""
 
 #: includes/Engines/TNTSearch/Indexer/Searchable/Indexer.php:176
-#: includes/Engines/TNTSearchMySQL/Indexer/Searchable/Indexer.php:171
 msgctxt "Admin, logs"
 msgid "[Searchable index] Cleared"
 msgstr ""
@@ -1260,8 +1298,26 @@ msgctxt "Admin, logs"
 msgid "[Readable index] The queue <code>%s</code> was created"
 msgstr ""
 
+#: includes/Engines/TNTSearchMySQL/Indexer/Searchable/AsyncProcess.php:119
+#, php-format
+msgctxt "Admin, logs"
+msgid "[Searchable index] The queue <code>%s</code> was deleted "
+msgstr ""
+
+#: includes/Engines/TNTSearchMySQL/Indexer/Searchable/AsyncProcess.php:132
+#, php-format
+msgctxt "Admin, logs"
+msgid "[Searchable index] Schedule <code>%s</code> was created "
+msgstr ""
+
+#: includes/Engines/TNTSearchMySQL/Indexer/Searchable/AsyncProcess.php:148
+#, php-format
+msgctxt "Admin, logs"
+msgid "[Searchable index] The queue <code>%s</code> was created"
+msgstr ""
+
 #. Name of the plugin
-msgid "AJAX Search for WooCommerce MysQL"
+msgid "AJAX Search for WooCommerce"
 msgstr ""
 
 #. Description of the plugin

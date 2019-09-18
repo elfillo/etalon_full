@@ -202,7 +202,7 @@ class Search
                     }
                     $r = array(
                         'post_id' => $product->getID(),
-                        'value'   => wp_strip_all_tags( $product->getName() ) . $scoreDebug,
+                        'value'   => html_entity_decode( wp_strip_all_tags( $product->getName() ) ) . $scoreDebug,
                         'url'     => $product->getPermalink(),
                     );
                     // Get thumb HTML

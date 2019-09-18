@@ -34,4 +34,5 @@ register_nav_menu('cat_catalog', 'Категории, каталог');
 add_theme_support( 'post-thumbnails' );
 
 require_once ('parts/admin/woocommerce.php');
+require_once ('parts/admin/designers.php');
 ?>

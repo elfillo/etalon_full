@@ -441,6 +441,58 @@
         }
     };
 
+    var SELECTIZE = {
+        init: function () {
+            var _this = this;
+            var $inputs = $('.dgwt-wcas-selectize');
+
+            if($inputs.length > 0){
+                $inputs.each(function(){
+
+                    var $input = $(this);
+                    var optionsRaw = $input.data('options');
+                    var options = [];
+
+                    if(optionsRaw.length > 0){
+                        optionsRaw = JSON.parse('["' + decodeURI(optionsRaw.replace(/&/g, "\",\"").replace(/=/g,"\",\"")) + '"]');
+
+                        var lastKey = '';
+
+                        optionsRaw.forEach(function (el, i) {
+
+                            if((i+1)%2 === 0){
+                                var obj = {value: el, label: lastKey};
+                                options.push(obj);
+                                lastKey = '';
+                            }
+                            lastKey = el;
+                        });
+
+                    }
+
+                    $(this).selectize({
+                        persist: false,
+                        maxItems: null,
+                        valueField: 'value',
+                        labelField: 'label',
+                        searchField: ['value', 'label'],
+                        create: function(input) {
+                            return {
+                                value: input,
+                                label: input
+                            }
+                        },
+                        options: options,
+                    });
+
+                });
+            }
+
+
+
+        }
+    }
+
     function automateSettingsColspan() {
         var $el = $('.js-dgwt-wcas-sgs-autocolspan');
         if ($el.length > 0) {
@@ -458,6 +510,7 @@
         AJAX_CLOSE_BACKWARD_COMPATIBILITY.init();
 
         AJAX_BUILD_INDEX.init();
+        SELECTIZE.init();
     });
 
 

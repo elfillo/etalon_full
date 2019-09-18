@@ -5,7 +5,7 @@ Tags: woocomerce search, ajax search, live search, product search, woocommerce
 Requires at least: 3.8
 Tested up to: 5.2
 Requires PHP: 5.5
-Stable tag: 1.4.1
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ Ajax Search for WooCommerce has been designed to enhance user search experience 
 * WPML compatible
 * You can set your own **label on the 'search' button**
 * You can set your own **preloader image**
-* You can set your own **colour scheme** for the 10 main form elements and suggestions
+* You can set your own **color scheme** for the 10 main form elements and suggestions
 
 = How to use? =
 1. Use shorcode [wcas-search-form] in page/post editor or <?php echo do_shortcode('[wcas-search-form]'); ?> in your Child Theme template files.
@@ -44,16 +44,23 @@ Ajax Search for WooCommerce has been designed to enhance user search experience 
 This plugin is completely free of charge and provides the whole range of functions which are included in some paid plugins.
 
 = Pro =
-There are also **AJAX Search for WooCommerce Pro** with new search engine based on inverted index. It works even 10x faster in some cases.**
-See all Pro [features](https://ajaxsearch.pro?utm_source=readme&utm_medium=referral&utm_content=title&utm_campaign=asfw#features-comparsion)
+There are also **AJAX Search for WooCommerce Pro** with new search engine based on inverted index. It works even 10x faster in some cases. Some of the most important Pro features:
+
+*   Fast search engine based on inverted index
+*   Works very fast even with 100,000+ products
+*   Fuzzy search
+*   Search in custom fields
+*   Search in attributes
+*   Search in brands (WooCommerce Brands and YITH WooCommerce Brands)
+*   Search in variation product SKU
+*   Help with embedding or replacing the search form in any theme
+*   SEE ALL PRO [FEATURES](https://ajaxsearch.pro?utm_source=readme&utm_medium=referral&utm_content=title&utm_campaign=asfw#features-comparsion)!
 
 = Showcase =
-See how it works for others: [Showcase](https://ajaxsearch.pro/showcase/?utm_source=readme&utm_medium=referral&utm_content=title&utm_campaign=asfw).
-
+See how it works for others: [Showcase](https://ajaxsearch.pro/showcase/?utm_source=readme&utm_medium=referral&utm_campaign=asfw&utm_content=showcase&utm_gen=utmdc).
 
 = Feedback =
-
-Any suggestions or comments are welcome. Feel free to contact me using this [contact form](https://ajaxsearch.pro/contact/?utm_source=readme&utm_medium=referral&utm_content=title&utm_campaign=asfw).
+Any suggestions or comments are welcome. Feel free to contact me using this [contact form](https://ajaxsearch.pro/contact/?utm_source=readme&utm_medium=referral&utm_campaign=asfw&utm_content=contact&utm_gen=utmdc).
 
 == Installation ==
 
@@ -70,6 +77,15 @@ Any suggestions or comments are welcome. Feel free to contact me using this [con
 4. Settings page with colour schemes
 
 == Changelog ==
+= 1.5.0, September 16, 2019 =
+
+* ADD: Integration with the Flatsome theme. It is possible to replace the Flatsome search form via one checbox in the plugin settings page.
+* FIX: Overload servers. Optimalization for chain AJAX requests. Creates a debounced function that delays invoking func until after wait milliseconds have elapsed since the last time the debounced function was invoked
+* FIX: Better support for HTML entities in products title and description
+* FIX: Issues with mobile search version on Storefront theme for iPhones
+* CHANGE: Update/sync fork of devbridge/jQuery-Autocomplete to the latest version
+* CHANGE: Settings design
+
 = 1.4.1, August 05, 2019 =
 
 * ADD: French translations
@@ -124,14 +140,12 @@ Any suggestions or comments are welcome. Feel free to contact me using this [con
 * FIX: Add SKU label translatable in the suggestions
 * CHANGE: Updated Freemius SDK
 
-
 = 1.2.1, October 26, 2018 =
 * ADD: Storefront support as a option. Allows to replace the native Storefront search form
 * FIX: Improving the relevance of search results by adding score system
 * FIX: Problem with too big images is some cases
 * FIX: Support for HTML entities in the search results
 * FIX: Bugs with the blur event on mobile devices
-
 
 = 1.2.0, August 24, 2018 =
 * ADD: Backward compatibility system
@@ -150,8 +164,7 @@ Any suggestions or comments are welcome. Feel free to contact me using this [con
 * CHANGE: Better settings organization
 * CHANGE: Updated Freemius SDK
 
-
-= 1.1.7, April 22, 2017 =
+= 1.1.7, April 22, 2018 =
 * FIX: Removed duplicate IDs
 * CHANGE: PHP requires tag set to PHP 5.5
 * CHANGE: Woocommerce requires tags
@@ -225,4 +238,3 @@ Any suggestions or comments are welcome. Feel free to contact me using this [con
 
 = 0.9.0, May 17, 2016 =
 * ADD: First public release
-

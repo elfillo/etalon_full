@@ -27,8 +27,20 @@
 }
 
 .dgwt_wcas_settings-group .form-table th {
-    vertical-align: baseline;
+    vertical-align: middle;
 }
+
+.dgwt_wcas_settings-group .form-table td fieldset label {
+    margin: 0 !important;
+}
+
+.dgwt_wcas_settings-group .form-table > tbody > tr > th,
+.dgwt_wcas_settings-group .form-table > tbody > tr > td {
+    padding: 20px 10px;
+    line-height: 16px;
+}
+
+
 
 #dgwt_wcas_backward-compatibility .form-table th {
     vertical-align: baseline;
@@ -51,6 +63,28 @@
     letter-spacing: 3px;
     font-weight: normal;
     cursor: default;
+    position: absolute!important;
+    width: calc(100vw - 230px);
+    top: 50px;
+    left: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+.dgwt-wcas-sgs-header:first-child label{
+    top: 15px;
+}
+.dgwt-wcas-sgs-header th:before {
+    content: '';
+    display: block;
+    height: 55px;
+}
+.dgwt-wcas-sgs-header:first-child th:before {
+    height: 25px;
+}
+
+.dgwt-wcas-sgs-header th {
+    position: relative;
+    min-height: 70px;
 }
 
 .dgwt-wcas-sgs-desctiption-row th {
@@ -81,7 +115,9 @@
     vertical-align: middle;
     margin-right: 5px;
 }
-
+.dgwt_wcas_settings-group .form-table td {
+    margin-bottom: 0;
+}
 .form-table td p.dgwt_wcas_settings-description-field {
     color: #777;
     display: inline-block;
@@ -417,7 +453,22 @@
     left: -24px;
     top: 0;
 }
-.nav-tab-minor-account {
+
+.nav-tab-minor-showcase:before{
+    display: block;
+    content: "\f126";
+    font-family: dashicons;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    display: inline-block;
+    position: absolute;
+    left: -24px;
+    top: 0;
+}
+
+.nav-tab-minor-account,
+.nav-tab-minor-showcase {
     margin-right: 25px;
 }
 .nav-tab-minor-account:before{
@@ -679,14 +730,14 @@ input[type=checkbox].dgwt-wcas-check:checked ~ .dgwt-wcas-switch {
 }
 
 .dgwt-wcas-indexer-table td {
-    padding: 3px 10px;
+    padding: 3px 10px!important;
     border-bottom: 1px solid #e8e8e8;
     line-height: 100%;
 }
 
 .dgwt-wcas-indexer-table table td {
     border-bottom: none;
-    padding-left: 0;
+    padding-left: 0!important;
 }
 
 .dgwt-wcas-indexer-table > tbody > tr:last-child > td {
@@ -824,6 +875,7 @@ td.dgwt-wcas-indexing-details-row a {
     font-size: 25px;
     margin-bottom: 10px;
     display: block;
+    line-height: 157%;
 }
 
 .form-table td p.dgwt-wcas-upgrade-s__subtitle {
@@ -850,4 +902,9 @@ td.dgwt-wcas-indexing-details-row a {
     padding-top: 7px;
     border-top: 1px dashed #eee;
     color: #888;
+}
+
+.dgwt_wcas_settings-group .selectize-input {
+    min-width: 280px;
+    max-width: 280px;
 }

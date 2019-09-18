@@ -4,13 +4,13 @@
  * Plugin Name: AJAX Search for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/ajax-search-for-woocommerce/
  * Description: Allows your customers to search products easily and quickly. It will display the results instantly while typing in an inputbox.
- * Version: 1.4.1
+ * Version: 1.5.0
  * Author: Damian Góra
  * Author URI: http://damiangora.com
  * Text Domain: ajax-search-for-woocommerce
  * Domain Path: /languages
  * WC requires at least: 3.0
- * WC tested up to: 3.6
+ * WC tested up to: 3.7
  *
  */
 // Exit if accessed directly
@@ -31,6 +31,8 @@ if ( !class_exists( 'DGWT_WC_Ajax_Search' ) && !function_exists( 'dgoraAsfwFs' )
         public  $settings ;
         public  $multilingual ;
         public  $backwardCompatibility ;
+        public  $themeCompatibility ;
+        public  $brands ;
         public  $nativeSearch ;
         public  $tntsearch ;
         public  $tntsearchValid = false ;
@@ -61,7 +63,8 @@ if ( !class_exists( 'DGWT_WC_Ajax_Search' ) && !function_exists( 'dgoraAsfwFs' )
                 new \DgoraWcas\Engines\WordPressNative\DetailsBox();
                 new \DgoraWcas\Personalization();
                 new \DgoraWcas\Scripts();
-                new \DgoraWcas\Integrations\Themes\ThemesCompatibility();
+                self::$instance->themeCompatibility = new \DgoraWcas\Integrations\Themes\ThemesCompatibility();
+                self::$instance->brands = new \DgoraWcas\Integrations\Brands();
                 \DgoraWcas\Shortcode::register();
                 
                 if ( is_admin() ) {
