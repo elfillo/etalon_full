@@ -15,13 +15,13 @@
                 <?php foreach ($designers as $key => $designer):?>
                     <?php $img = wp_get_attachment_url(get_term_meta($designer->ID, 'thumbnail_id', true )); ?>
                     <div class="designers_list--item">
-                        <a href="<?php echo get_term_link($designer)?>" >
+                        <a href="<?php echo get_permalink($designer->ID)?>" >
                             <div class="image" style="background-color: #eee">
                                 <?php echo get_the_post_thumbnail($designer->ID)?>
                             </div>
                         </a>
                         <div class="text">
-                            <a href="<?php echo get_term_link($designer)?>" class="name"><?php echo $designer->post_title?></a>
+                            <a href="<?php echo get_permalink($designer->ID)?>" class="name"><?php echo $designer->post_title?></a>
                             <p>Проектов: <?php echo get_post_meta($designer->ID, 'project_count', true)?></p>
                             <p>Опыт работы: <?php echo get_post_meta($designer->ID, 'experience', true)?> лет</p>
                             <p>Рейтинг
