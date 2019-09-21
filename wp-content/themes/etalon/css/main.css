@@ -1277,6 +1277,212 @@
           bottom: 0;
           right: 10px; }
 
+.designer {
+  width: 100%; }
+  .designer .breadcrumbs a {
+    font-size: 24px;
+    font-weight: 700; }
+  .designer_detail {
+    width: 100%;
+    margin-bottom: 20px; }
+    .designer_detail--image {
+      width: 311px;
+      height: 303px;
+      margin-right: 18px; }
+    .designer_detail--text {
+      position: relative; }
+      .designer_detail--text .title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        margin-bottom: 10px; }
+      .designer_detail--text .position {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 18.67px;
+        margin-bottom: 28px; }
+      .designer_detail--text .params {
+        font-size: 13px; }
+        .designer_detail--text .params p {
+          display: block;
+          margin-bottom: 9px; }
+      .designer_detail--text .button {
+        position: absolute;
+        bottom: 0; }
+    .designer_detail .description {
+      width: 310px;
+      padding-right: 34px;
+      border-right: 2px solid #eee;
+      font-size: 14px;
+      line-height: 16px; }
+      .designer_detail .description span {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 18px; }
+    .designer_detail .slogan {
+      font-size: 48px;
+      font-weight: 700;
+      font-style: italic;
+      width: calc(100% - 310px);
+      padding-left: 35px; }
+    .designer_detail--gallery {
+      width: 100%; }
+      .designer_detail--gallery .title {
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 42px; }
+      .designer_detail--gallery .list {
+        width: 100%; }
+        .designer_detail--gallery .list .gallery {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+          .designer_detail--gallery .list .gallery .gallery-item {
+            float: none !important;
+            margin-top: 0 !important;
+            overflow: hidden; }
+            .designer_detail--gallery .list .gallery .gallery-item .gallery-icon {
+              width: 100%; }
+              .designer_detail--gallery .list .gallery .gallery-item .gallery-icon a img {
+                width: 100%;
+                height: 100%;
+                border: none !important; }
+
+.page--contacts {
+  width: 765px;
+  margin: 0 auto;
+  margin-bottom: 50px; }
+  @media screen and (max-width: 750px) {
+    .page--contacts {
+      width: 100%; } }
+  .page--contacts .title {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px; }
+  .page--contacts .address {
+    width: 100%;
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 20px; }
+  .page--contacts .contacts p {
+    display: block;
+    width: 50%;
+    font-size: 22px; }
+    .page--contacts .contacts p:last-child {
+      text-align: right; }
+
+.page--projects .banner {
+  width: 100%;
+  height: 403px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url("../img/banners/projects--banner.png") no-repeat center;
+  background-size: cover; }
+  .page--projects .banner .title {
+    font-family: Colus !important;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 72px;
+    color: #fff; }
+  .page--projects .banner p {
+    display: block;
+    width: 240px;
+    font-size: 13px;
+    line-height: 18.67px;
+    color: #fff; }
+.page--projects .gallery ul li {
+  margin: 0 !important; }
+.page--parking .banner {
+  width: 100%;
+  height: 403px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url("../img/banners/banner--parking.png") no-repeat center;
+  background-size: cover; }
+  .page--parking .banner .title {
+    font-family: Colus !important;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 72px;
+    color: #fff; }
+.page--parking .content {
+  width: 1080px;
+  margin: 0 auto; }
+  .page--parking .content .title {
+    width: 490px;
+    font-size: 48px;
+    font-weight: 700;
+    font-style: italic;
+    margin: 75px auto 50px auto; }
+  .page--parking .content .map {
+    width: 100%;
+    height: 430px;
+    background: url("../img/banners/map--parking.png") no-repeat center;
+    background-size: cover;
+    margin-bottom: 68px; }
+  .page--parking .content .parking--column {
+    width: 277px; }
+    .page--parking .content .parking--column .image {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 34px auto; }
+      .page--parking .content .parking--column .image img {
+        width: 100%;
+        height: auto; }
+    .page--parking .content .parking--column .title {
+      width: 100%;
+      font-size: 24px;
+      margin: 0 auto; }
+    .page--parking .content .parking--column .desc {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 16px; }
+      .page--parking .content .parking--column .desc p {
+        display: block;
+        margin-bottom: 15px; }
+        .page--parking .content .parking--column .desc p span {
+          font-weight: 700; }
+  .page--parking .content .parking--button {
+    width: 283px;
+    margin: 30px auto; }
+.page--parking .parking--pic {
+  width: 100%;
+  height: 380px;
+  background: url("../img/banners/parking--pic.png") no-repeat center;
+  background-size: cover;
+  margin-bottom: 68px; }
+
 @font-face {
   font-family: "Century Gothic";
   src: url("../fonts/CenturyGothic_regular.ttf") format("truetype");
@@ -1286,6 +1492,11 @@
   font-family: "Century Gothic";
   src: url("../fonts/CenturyGothic_bold.ttf") format("truetype");
   font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: "Colus";
+  src: url("../fonts/Colus.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal; }
 body, html {
   font-family: Century Gothic !important; }

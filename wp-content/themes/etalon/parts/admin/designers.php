@@ -81,4 +81,42 @@ function designers_save($post_id) {
 
 add_action('save_post', 'designers_save');
 
+function designer_gallery_callback($post){
+    $program = get_post_meta($post->ID, 'designer_gallery', true);
+    wp_editor($program, 'designer_gallery_data', array(
+        'wpautop'       => 1,
+        'media_buttons' => 1,
+        'textarea_name' => 'designer_gallery_data', //нужно указывать!
+        'textarea_rows' => 20,
+        'tabindex'      => null,
+        'editor_css'    => '',
+        'editor_class'  => '',
+        'teeny'         => 0,
+        'dfw'           => 0,
+        'tinymce'       => 1,
+        'quicktags'     => 1,
+        'drag_drop_upload' => false
+    ) );
+}
+function init_program() {
+    add_meta_box(
+        'designer_gallery',
+        'Галлерея работ',
+        'designer_gallery_callback',
+        ['designers'],
+        'advanced',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'init_program');
+function designer_gallery_save($post_id){
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {return;}
+    if (!current_user_can('edit_post', $post_id)) {return;}
+    $program = $_POST['designer_gallery_data'];
+    if($program){
+        update_post_meta($post_id, 'designer_gallery', $program);
+    }
+}
+add_action('save_post', 'designer_gallery_save');
+
 ?>
