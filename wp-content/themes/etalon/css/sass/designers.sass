@@ -6,8 +6,8 @@
     width: 100%
     display: flex
     flex-wrap: wrap
-    @media screen and (max-width: 1280px)
-      //justify-content: center
+    @media screen and (max-width: $mobile)
+      justify-content: center
     &--item
       width: 310px
       margin-right: 5px
@@ -60,12 +60,20 @@
   &_detail
     width: 100%
     margin-bottom: 20px
+    @media screen and (max-width: $tablet)
+      flex-direction: column
+      align-items: center
     &--image
       width: 311px
       height: 303px
       margin-right: 18px
+      @media screen and (max-width: $tablet)
+        margin-right: 0
+        margin-bottom: 20px
     &--text
       position: relative
+      @media screen and (max-width: $tablet)
+        width: 311px
       .title
         font-size: 24px
         font-weight: 700
@@ -90,6 +98,9 @@
       border-right: 2px solid #eee
       font-size: 14px
       line-height: 16px
+      @media screen and (max-width: $tablet)
+        padding-right: 0
+        border-right: 0
       span
         display: block
         font-size: 24px
@@ -101,6 +112,10 @@
       font-style: italic
       width: calc(100% - 310px)
       padding-left: 35px
+      @media screen and (max-width: $tablet)
+        width: 100%
+        padding-left: 0
+        font-size: 32px
     &--gallery
       width: 100%
       .title
@@ -109,6 +124,8 @@
         font-size: 24px
         font-weight: 700
         margin-bottom: 42px
+        @media screen and (max-width: $tablet)
+          margin-bottom: 20px
       .list
         width: 100%
         .gallery
@@ -118,6 +135,8 @@
             float: none !important
             margin-top: 0 !important
             overflow: hidden
+            @media screen and (max-width: $mobile)
+              width: 100% !important
             .gallery-icon
               width: 100%
               a

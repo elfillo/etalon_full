@@ -10,7 +10,7 @@
                 позаботились.”
             </div>
             <div class="map"></div>
-            <div class="flex flex_sb">
+            <div class="columns flex flex_sb">
                 <div class="parking--column">
                     <div class="image">
                         <img src="<?php echo get_template_directory_uri() ?>/img/icons/parking_1.png" alt="#">

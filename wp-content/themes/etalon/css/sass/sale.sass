@@ -16,12 +16,23 @@
     background: url("../img/banners/banner_akczii.png") no-repeat center
     background-size: cover
     margin-bottom: 25px
+    .title
+      font-family: Colus !important
   &--center
     &_about
       margin-bottom: 25px
+      .title
+        @media screen and (max-width: $tablet)
+          text-align: center
+      .columns
+        @media screen and (max-width: $tablet)
+          flex-direction: column
+          align-items: center
     &_map
       width: 100%
       margin-bottom: 20px
+      @media screen and (max-width: $tablet)
+        display: none
       .map_container
         height: 475px
         background-image: url("../img/floors/floor_1.png")
@@ -57,11 +68,15 @@
               left: calc(50% - 17px)
     &_reasons
       margin-bottom: 50px
+      @media screen and (max-width: $tablet)
+        display: none
     &_advantages
       margin-bottom: 50px
       .advantages
         display: flex
         flex-wrap: wrap
+        @media screen and (max-width: $mobile)
+          justify-content: center
         .sale--column
           margin: 0 18px
           margin-bottom: 20px
@@ -72,6 +87,8 @@
         margin: 0 auto
         margin-bottom: 150px
         width: 870px
+        @media screen and (max-width: $tablet)
+          width: 100%
       &--banner
         width: 100%
         .container
@@ -84,11 +101,16 @@
           align-items: center
           position: relative
           margin-bottom: 100px
+          @media screen and (max-width: $tablet)
+            background: none
+            justify-content: center
         .title
           width: 480px
           font-size: 48px
           font-weight: 700
           padding-left: 35px
+          @media screen and (max-width: $tablet)
+            display: none
         .form
           width: 323px
           height: 466px
@@ -98,6 +120,9 @@
           position: absolute
           top: -43px
           right: -10px
+          @media screen and (max-width: $tablet)
+            position: unset
+            width: 319px
           .title
             width: 80%
             font-size: 24px
@@ -120,14 +145,26 @@
               margin-bottom: 24px
     &_visit
       margin-bottom: 67px
+      @media screen and (max-width: $tablet)
+        margin-bottom: 25px
       .title
         width: 520px
         margin: 0 auto
         margin-bottom: 65px
+        @media screen and (max-width: $tablet)
+          width: 100%
+          margin-bottom: 25px
+          font-size: 32px
+      .visit_steps
+        @media screen and (max-width: $tablet)
+          flex-direction: column
+          justify-content: center
       .sale--column
         margin: 0 auto 65px
       &--banner
         width: 100%
+        @media screen and (max-width: $tablet)
+          display: none
         .container
           height: 304px
           background-image: url("../img/banners/sale_visit_bg.png")
@@ -150,12 +187,18 @@
       width: 970px
       margin: 0 auto
       margin-bottom: 67px
+      @media screen and (max-width: $tablet)
+        width: 100%
       .title
         font-weight: 700
       .news_list
         width: 100%
         display: flex
         justify-content: space-between
+        @media screen and (max-width: $tablet)
+          flex-direction: column
+          justify-content: center
+          align-items: center
         .sidebar_news--item
           width: 224px
 
