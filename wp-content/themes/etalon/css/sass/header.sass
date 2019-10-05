@@ -103,31 +103,31 @@
     align-items: center
     li
       position: relative
-    .sub-menu
-      display: none
-      width: 220px
-      border: 1px solid $grey
-      position: absolute
-      background-color: white
-      z-index: 100
-      left: calc(50% - 110px)
-      top: 25px
-      &:hover
-        display: block
-      li
-        width: 100%
-        min-height: 43px
-        padding-left: 40px
-        display: flex
-        align-items: center
-        font-size: 14px
-        border-bottom: 1px solid $grey
-        cursor: pointer
-        &:last-child
-          border-bottom: none
+      .sub-menu
+        display: none
+        width: 220px
+        border: 1px solid $grey
+        position: absolute
+        background-color: white
+        z-index: 100
+        left: calc(50% - 110px)
+        top: 25px
         &:hover
-          background-color: $hoverRed
-          color: $white
+          display: block
+        li
+          width: 100%
+          min-height: 43px
+          padding-left: 40px
+          display: flex
+          align-items: center
+          font-size: 14px
+          border-bottom: 1px solid $grey
+          cursor: pointer
+          &:last-child
+            border-bottom: none
+          &:hover
+            background-color: $hoverRed
+            color: $white
     li.show_sub
       .sub-menu
         display: block

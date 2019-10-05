@@ -51,4 +51,3 @@
         <?php wp_nav_menu(array('theme_location'=>'mobile_catalog', 'menu_class'=>'mobile_menu--catalog') );?>
     </div>
 </header>
-

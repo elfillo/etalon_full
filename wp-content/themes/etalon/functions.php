@@ -33,6 +33,9 @@ register_nav_menu('cat_catalog', 'Категории, каталог');
 //add thumbnails
 add_theme_support( 'post-thumbnails' );
 
+require_once ('parts/admin/helpers.php');
 require_once ('parts/admin/woocommerce.php');
 require_once ('parts/admin/designers.php');
+require_once ('parts/admin/side-bar-menu.php');
+
 ?>

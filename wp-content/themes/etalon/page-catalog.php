@@ -2,7 +2,7 @@
 <div class="container flex flex_sb">
     <div class="sidebar">
         <div class="sidebar_menu">
-            <?php wp_nav_menu(array('theme_location'=>'cat_catalog', 'menu_class'=>'sidebar_menu--list') );?>
+            <?php sideBar_menu()?>
         </div>
     </div>
     <div class="content">
