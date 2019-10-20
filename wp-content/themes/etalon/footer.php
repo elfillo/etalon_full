@@ -27,9 +27,21 @@
                 <div class="footer--menu__column">
                     <div class="footer--menu__title">Наши соцсети:</div>
                     <div class="socials">
-                        <a href="https://vk.com/etalon_irk" target="_blank" class="item"><img src="<?php echo get_template_directory_uri() ?>/img/icons/vk.png" alt="#"></a>
-                        <a href="https://www.facebook.com/groups/etalonirk/" target="_blank" class="item"><img src="<?php echo get_template_directory_uri() ?>/img/icons/fb.png" alt="#"></a>
-                        <a href="https://www.instagram.com/etalon_irkutsk/" target="_blank" class="item"><img src="<?php echo get_template_directory_uri() ?>/img/icons/inst.png" alt="#"></a>
+                        <a href="https://vk.com/etalon_irk" target="_blank" class="item">
+                            <svg class="inline-svg-icon">
+                                <use xlink:href="#icon--vk"></use>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/groups/etalonirk/" target="_blank" class="item">
+                            <svg class="inline-svg-icon">
+                                <use xlink:href="#icon--fb"></use>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/etalon_irkutsk/" target="_blank" class="item">
+                            <svg class="inline-svg-icon">
+                                <use xlink:href="#icon--inst"></use>
+                            </svg>
+                        </a>
                     </div>
                     <div class="callback">
                         <div class="title">Хочу обратный звонок!</div>
@@ -63,5 +75,6 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/54914854" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <?php wp_footer(); ?>
+    <?php require_once 'parts/icons.php'?>
 </body>
 </html>

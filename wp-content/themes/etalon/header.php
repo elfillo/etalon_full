@@ -20,11 +20,19 @@
         </div>
         <div class="contacts">
             <a href="mailto:etalon_irk@mail.ru" class="mail">
-                <span class="icon"><img src="<?php echo get_template_directory_uri() ?>/img/icons/mail.png" alt="mail"></span>
+                <span class="icon">
+                    <svg class="inline-svg-icon">
+                        <use xlink:href="#icon--mail"></use>
+                    </svg>
+                </span>
                 <span>etalon_irk@mail.ru</span>
             </a>
             <a href="tel:+73952707131" class="phone">
-                <span class="icon"><img src="<?php echo get_template_directory_uri() ?>/img/icons/phone.png" alt="phone"></span>
+                <span class="icon">
+                    <svg class="inline-svg-icon">
+                        <use xlink:href="#icon--phone"></use>
+                    </svg>
+                </span>
                 <span>+7 (3952) 707-131</span>
             </a>
         </div>

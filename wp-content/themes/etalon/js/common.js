@@ -99,12 +99,19 @@ $(document).ready(function () {
        $(event.target).addClass('active');
        let floor = event.target.dataset.floor;
        changeMapImage(floor);
+       changeFloorCount(floor);
    });
 
    function changeMapImage(floor) {
        let imgUrl = '/wp-content/themes/etalon/img/floors/floor_' + floor + '.png';
        $('.map_container').css('background-image', 'url('+imgUrl+')');
    }
+
+   function changeFloorCount(floor){
+       $('#floor_count').text(floor + ' этаж');
+
+   }
+
 });
 //show sub menu
 $(document).ready(function () {
