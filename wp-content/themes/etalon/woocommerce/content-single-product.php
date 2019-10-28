@@ -64,11 +64,11 @@ if ( post_password_required() ) {
             <?php if(!(strlen($pack_length) === 0 & strlen($pack_width) === 0 & strlen($pack_height) === 0)):?>
                 Размеры:<br/>
             <?php endif;?>
-            <?php if(strlen($pack_length) > 1):?>
-                Высота: <span><?php echo $pack_length?> мм</span><br/>
-            <?php endif;?>
             <?php if(strlen($pack_width) > 1):?>
                 Ширина: <span><?php echo $pack_width?> мм</span><br/>
+            <?php endif;?>
+            <?php if(strlen($pack_length) > 1):?>
+                Высота: <span><?php echo $pack_length?> мм</span><br/>
             <?php endif;?>
             <?php if(strlen($pack_height) > 1):?>
                 Глубина: <span><?php echo $pack_height?> мм</span><br/>

@@ -2,12 +2,12 @@
     <section class="sale_banner">
         <div class="container">
             <a href="/akczii">
-                <div class="sale_banner__tex top">спецпредложения на кухни</div>
-                <div class="sale_banner__logo"><img src="<?php echo get_template_directory_uri() ?>/img/banners/promo_log.png" alt="banner"></div>
+                <!--<div class="sale_banner__tex top">спецпредложения на кухни</div>
+                <div class="sale_banner__logo"><img src="<?php /*echo get_template_directory_uri() */?>/img/banners/promo_log.png" alt="banner"></div>
                 <div class="sale_banner__text bottom">
                     <span>чтобы завтракать в удовольствие</span>
                     <p>Предложение действительно с 12.08.2019г. до 12.10.2019г. <br/> Подробности на сайте www.etalon-irkutsk.ru и у продавцов.</p>
-                </div>
+                </div>-->
             </a>
         </div>
     </section>
@@ -39,7 +39,7 @@
     <section class="promo_product">
         <div class="container">
             <div class="shop">
-                <?php echo do_shortcode('[products]');?>
+                <?php echo do_shortcode('[products category="divany"]');?>
                 <div class="shop--show_all">
                     <!--<div class="btn btn--dark btn--big">Посмотреть все товары</div>-->
                 </div>
