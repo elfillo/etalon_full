@@ -119,7 +119,7 @@ function woocommerce_content() {
             <!--<div class="sidebar_menu">
                 <?php /*sideBar_menu()*/?>
             </div>-->
-            <div class="sidebar_menu">
+            <div style="margin-bottom: 20px">
                 <?php include_once ('widgets.php');?>
             </div>
         </div>
