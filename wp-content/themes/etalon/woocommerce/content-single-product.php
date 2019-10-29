@@ -73,6 +73,7 @@ if ( post_password_required() ) {
             <?php if(strlen($pack_height) > 1):?>
                 Глубина: <span><?php echo $pack_height?> мм</span><br/>
             <?php endif;?>
+            <?php cw_woo_attribute();?>
         </div>
         <div class="description">
             <?php  echo apply_filters( 'woocommerce_short_description', $post->post_excerpt );?>

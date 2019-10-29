@@ -62,5 +62,6 @@ function sideBar_menu(){
 
     }
     echo '</ul>';
+
 }
 ?>

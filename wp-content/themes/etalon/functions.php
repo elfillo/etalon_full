@@ -33,6 +33,31 @@ register_nav_menu('cat_catalog', 'Категории, каталог');
 //add thumbnails
 add_theme_support( 'post-thumbnails' );
 
+// Add theme support for selective refresh for widgets.
+add_theme_support( 'customize-selective-refresh-widgets' );
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function etalon_widgets_init() {
+
+    register_sidebar(
+        array(
+            'name'          => __( 'Сайдбар', 'etalon' ),
+            'id'            => 'sidebar-1',
+            'description'   => __( 'Выводит виджеты в сайдбар.', 'etalon' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+
+}
+add_action( 'widgets_init', 'etalon_widgets_init' );
+
 require_once ('parts/admin/helpers.php');
 require_once ('parts/admin/woocommerce.php');
 require_once ('parts/admin/designers.php');

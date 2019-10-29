@@ -116,8 +116,11 @@ function woocommerce_content() {
     } else {
         ?>
         <div class="sidebar">
+            <!--<div class="sidebar_menu">
+                <?php /*sideBar_menu()*/?>
+            </div>-->
             <div class="sidebar_menu">
-                <?php sideBar_menu()?>
+                <?php include_once ('widgets.php');?>
             </div>
         </div>
         <div class="content">
@@ -156,3 +159,59 @@ function woocommerce_content() {
         echo '</div>';
     }
 }
+
+function cw_woo_attribute(){
+    global $product;
+    $attributes = $product->get_attributes();
+
+    if ( ! $attributes ) {
+        return;
+    }
+
+    $display_result = '';
+
+    foreach ( $attributes as $attribute ) {
+
+
+        if ( $attribute->get_variation() ) {
+            continue;
+        }
+        $name = $attribute->get_name();
+
+        if ( $attribute->is_taxonomy() ) {
+
+            $terms = wp_get_post_terms( $product->get_id(), $name, 'all' );
+
+            $cwtax = $terms[0]->taxonomy;
+
+            $cw_object_taxonomy = get_taxonomy($cwtax);
+
+            if ( isset ($cw_object_taxonomy->labels->singular_name) ) {
+                $tax_label = $cw_object_taxonomy->labels->singular_name;
+            } elseif ( isset( $cw_object_taxonomy->label ) ) {
+                $tax_label = $cw_object_taxonomy->label;
+                if ( 0 === strpos( $tax_label, 'Product ' ) ) {
+                    $tax_label = substr( $tax_label, 8 );
+                }
+            }
+            $display_result .= $tax_label . ': ';
+            $tax_terms = array();
+
+            foreach ( $terms as $term ) {
+                $link = '/'.substr($term->taxonomy, 3);
+                $link .= '/'.$term->slug;
+
+                $single_term = '<a href="'.$link.'" target="_blank">'.esc_html( $term->name ).'</a>';
+                array_push( $tax_terms, $single_term );
+            }
+
+            $display_result .= implode(', ', $tax_terms) .  '<br />';
+
+        } else {
+            $display_result .= $name . ': ';
+            $display_result .= esc_html( implode( ', ', $attribute->get_options() ) ) . '<br />';
+        }
+    }
+    echo $display_result;
+}
+
