@@ -26,6 +26,11 @@ if ( ! empty( $breadcrumb ) ) {
 
 	foreach ( $breadcrumb as $key => $crumb ) {
 
+	    if($key === 1 && strpos($crumb[0], 'Товар ') !== false){
+            $crumb[0] = substr($crumb[0], 11);
+            //dd($crumb[0]);
+        }
+
 		echo $before;
 
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
