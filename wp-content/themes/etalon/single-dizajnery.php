@@ -33,7 +33,7 @@
         <div class="designer_detail flex">
             <div class="description">
                 <span>О дизайнере:</span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                <?php echo get_post_meta($id, 'designer_gallery', true); ?>
             </div>
             <div class="slogan"><?php the_excerpt()?></div>
         </div>
@@ -41,9 +41,8 @@
 </section>
 <section class="designer_detail--gallery">
     <div class="title">Лучшие проекты:</div>
-    <div class="list">
-        <?php $galley = get_post_meta($id, 'designer_gallery', true); ?>
-        <?php echo do_shortcode($galley)?>
-    </div>
+    <section class="gallery">
+        <?php the_content()?>
+    </section>
 </section>
 <?php get_footer()?>

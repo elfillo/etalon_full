@@ -764,9 +764,9 @@
             -ms-flex-pack: center;
                 justify-content: center; } }
     .shop_list--item {
-      width: 310px;
-      margin-right: 5px;
-      margin-left: 5px;
+      width: 300px;
+      margin-right: 4px;
+      margin-left: 4px;
       margin-bottom: 20px; }
       .shop_list--item .image {
         width: 100%;
@@ -1739,6 +1739,9 @@
   background-size: cover;
   margin-bottom: 68px; }
 
+.gallery ul li {
+  margin: 0 !important; }
+
 @font-face {
   font-family: "Century Gothic";
   src: url("../fonts/CenturyGothic_regular.ttf") format("truetype");
@@ -1830,5 +1833,19 @@ body, html {
   height: 14px;
   margin-right: 9px;
   background: url("../img/icons/red_star.png") no-repeat center; }
+
+ul.page-numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 15px 0; }
+  ul.page-numbers li {
+    display: block;
+    margin-right: 5px; }
+    ul.page-numbers li span.current {
+      color: #d11e30; }
 
 /*# sourceMappingURL=main.css.map */

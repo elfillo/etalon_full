@@ -17,6 +17,7 @@ function register_designers() {
         ),
         'public' => true,
         'show_ui' => true,
+        'show_in_rest'        => true, // добавить в REST API. C WP 4.7
         'show_in_menu' => true,
         'show_in_admin_bar' => true,
         'show_in_nav_menus' => true,
@@ -101,7 +102,7 @@ function designer_gallery_callback($post){
 function init_program() {
     add_meta_box(
         'designer_gallery',
-        'Галлерея работ',
+        'О дизайнере',
         'designer_gallery_callback',
         ['designers'],
         'advanced',

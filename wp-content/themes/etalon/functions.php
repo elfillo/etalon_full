@@ -32,7 +32,7 @@ register_nav_menu('cat_catalog', 'Категории, каталог');
 
 //add thumbnails
 add_theme_support( 'post-thumbnails' );
-
+add_post_type_support( 'page', 'excerpt' );
 // Add theme support for selective refresh for widgets.
 add_theme_support( 'customize-selective-refresh-widgets' );
 

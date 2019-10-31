@@ -2,8 +2,8 @@
     <div class="page--projects">
         <section class="banner">
             <div class="title"><?php the_title()?></div>
-            <p class="excerpt"><?php the_excerpt()?>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p class="excerpt">
+                <?php the_excerpt()?>
             </p>
         </section>
         <section class="gallery">
