@@ -39,6 +39,7 @@
             ?>
             <div class="shop_list category_list">
                 <?php foreach ($product_categories as $key => $category):?>
+                <?php if($category->name != 'Uncategorized'):?>
                 <?php $img = wp_get_attachment_url(get_term_meta($category->term_id, 'thumbnail_id', true )); ?>
                 <div class="shop_list--item">
                     <a href="<?php echo get_term_link($category)?>" >
@@ -51,6 +52,7 @@
                         <a href="<?php echo get_term_link($category)?>" class="buy"><div class="btn">Подробнее</div></a>
                     </div>
                 </div>
+                <?php endif;?>
                 <?php endforeach;?>
             </div>
         </div>
