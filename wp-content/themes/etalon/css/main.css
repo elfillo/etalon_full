@@ -650,7 +650,7 @@
   letter-spacing: 0.75px; }
   @media screen and (max-width: 1280px) {
     .sale_banner {
-      height: auto;
+      height: 100px;
       padding: 10px 0;
       font-size: 17px; } }
   .sale_banner__logo {
@@ -764,7 +764,7 @@
             -ms-flex-pack: center;
                 justify-content: center; } }
     .shop_list--item {
-      width: 300px;
+      width: 292px;
       margin-right: 4px;
       margin-left: 4px;
       margin-bottom: 20px; }
